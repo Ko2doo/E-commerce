@@ -61,8 +61,8 @@ gulp.task('css-min', function() {
 
 gulp.task('libs', function(){
   return gulp.src([
-      'node_modules/aos/src/sass/aos.scss',
-      'node_modules/owl.carousel/dist/assets/owl.carousel.css'
+      'node_modules/normalize.css/normalize.css',
+      'node_modules/aos/src/sass/aos.scss'
     ])
   .pipe(sass())
   .pipe(concat('libs.css'))

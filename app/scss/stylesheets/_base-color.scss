@@ -1,18 +1,38 @@
-//Цвета в переменных
+// primary background color's
+$main-bg:	 #f0f2f5;
+$white-bg: #ffffff;
 
-$white: #fff;
-$black: #000;
-$lightBlack: #2c2c2c;
-$darkWhite: #a7a7a7;
-$darkGrey-color: #5e5d5d;
-$dark-form: #353535;
-$linkColor: #6e9294;
-$outputColor: #456d6f;
+// main palette
+$main-black: 					#000000;
+$main-element-grey: 	#3f4344;
+$main-dark-grey: 			#2a2a2a;
+$main-orange: 				#fd3a3a;
 
-$menu-back: #464E78;
-$block-border: 1px solid #151313;
+$main-light-grey: #f3f3f3;
 
-$inputColor: #0e0d0d;
-$goButton: #a2a2a2;
-$sectiongrey: #3c3b3b;
-$lightBlue: #69a3b5;
+// other color's
+$main-meter-bg: #363636;
+
+// text color's
+$white-txt: 			#ffffff;
+$light-grey-txt: 	#e9e9e9;
+$dark-grey-txt: 	#d5d5d5;
+
+// маркеры
+$mark-green: 				#04a109;
+$mark-dark-green: 	#638726;
+$mark-orange: 			#e33301;
+$mark-blue: 				#1a537f;
+
+// box-shadow color's
+$main-shadow: #e8eaed;
+
+// border color's
+$main-border: 								#e2e2e2;
+$main-white-icon-border: 			#ffffff;
+$main-primary-border: 				#e1e8ed;
+$main-primary-button-border: 	#a5adb2;
+$main-primary-icon-border: 		#2a2a2a;
+
+// controls
+$main-arrow-bg: #c7cdd9;
