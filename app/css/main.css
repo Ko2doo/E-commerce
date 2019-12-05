@@ -1,5 +1,22 @@
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body,
+html {
+  font-size: 1em;
+}
+
 h1 {
-  font-size: 42px;
+  font-size: 2.000em;
 }
 
 h2 {
@@ -7,15 +24,11 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.857em;
 }
 
 h4 {
-  font-size: 20px;
-}
-
-h5 {
-  font-size: 18px;
+  font-size: 1.143em;
 }
 
 .container {
@@ -30,6 +43,4 @@ h5 {
           flex-wrap: wrap;
   padding: 0 15px 0 15px;
   margin: 0 auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }

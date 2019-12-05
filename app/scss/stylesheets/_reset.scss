@@ -1,17 +1,32 @@
-// Сброс
+// Сброс и переназначение:
+
+:root{
+	box-sizing: border-box;
+}
+
+*,
+::before,
+::after{
+	box-sizing: inherit;
+}
+
+body,
+html{
+	font-size: 1em;
+}
 
 h1{
-  font-size: 42px;
+  font-size: 2.000em;
 }
+
 h2{
   font-size: 32px;
 }
+
 h3{
-  font-size: 24px;
+  font-size: 1.857em; //26px
 }
+
 h4{
-  font-size: 20px;
-}
-h5{
-  font-size: 18px;
+  font-size: 1.143em; //16px
 }
