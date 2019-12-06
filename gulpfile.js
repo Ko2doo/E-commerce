@@ -11,7 +11,6 @@ var gulp          = require('gulp'),
     cache         = require('gulp-cache'),
     autoprefixer  = require('gulp-autoprefixer');
 
-
 // Таск для Sass
 gulp.task('sass', async function() {
   return gulp.src('app/scss/**/*.scss')
@@ -22,6 +21,24 @@ gulp.task('sass', async function() {
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({stream: true}));
+});
+
+// минификация css
+gulp.task('css-min', function() {
+  return gulp.src([
+    'app/css/main.css',
+    'app/css/libs.css'
+    ])
+    .pipe(cssnano())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('build/css'));
+});
+
+gulp.task('css-lib', function(){
+  return gulp.src('node_modules/normalize.css/normalize.css')
+    .pipe(addsrc.append('node_modules/aos/dist/aos.css'))
+    .pipe(concat('libs.css'))
+    .pipe(gulp.dest('app/css'));
 });
 
 //таск для синхонизации с браузером
@@ -36,37 +53,17 @@ gulp.task('browser-sync', function() {
 
 //Таск для всех сприптов
 gulp.task('scripts', function() {
-  return gulp.src(['app/libs/jquery/jquery.js'])
+  return gulp.src(['node_modules/jquery/dist/jquery.js'])
     .pipe(addsrc.append('node_modules/aos/dist/aos.js'))
-    .pipe(concat('libs.min.js'))
+    .pipe(concat('libs.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'));
 });
 
+
 gulp.task('code', function() {
   return gulp.src('app/**/*.html')
-  .pipe(browserSync.reload({ stream: true }))
-});
-
-// минификация css
-gulp.task('css-min', function() {
-  return gulp.src([
-    'app/css/main.css',
-    'app/css/libs.css'
-    ])
-    .pipe(cssnano())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('build/css'));
-});
-
-gulp.task('libs', function(){
-  return gulp.src([
-      'node_modules/normalize.css/normalize.css',
-      'node_modules/aos/src/sass/aos.scss'
-    ])
-  .pipe(sass())
-  .pipe(concat('libs.css'))
-  .pipe(gulp.dest('app/css'));
+  .pipe(browserSync.reload({ stream: true }));
 });
 
 // Группируем медиа-запросы
@@ -114,5 +111,6 @@ gulp.task('watch', function() {
   gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
 });
 
-gulp.task('default', gulp.parallel('sass', 'libs', 'scripts', 'browser-sync', 'watch'));
-gulp.task('build', gulp.parallel('clear', 'clean', 'css-min', 'media-queries', 'prebuild', 'img'));
+gulp.task('default', gulp.parallel('sass', 'css-lib', 'scripts', 'browser-sync', 'watch'));
+
+gulp.task('build', gulp.series('clean', 'clear', 'css-min', 'media-queries', 'prebuild', 'img'));

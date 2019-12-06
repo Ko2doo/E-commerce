@@ -1,7 +1,7 @@
 {
-  "name": "E-commerce",
+  "name": "project",
   "version": "1.0.0",
-  "description": "E-commerce project",
+  "description": "Фронтенд окружение",
   "main": "index.html",
   "devDependencies": {
     "browser-sync": "^2.26.7",
@@ -21,7 +21,8 @@
   "author": "ko2doo@github.com",
   "license": "ISC",
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "aos": "^3.0.0-beta.6"
+    "aos": "^3.0.0-beta.6",
+    "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1"
   }
 }
