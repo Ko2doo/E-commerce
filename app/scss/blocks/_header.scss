@@ -2,7 +2,36 @@
 .header{
 
 	&-top{
-		padding: 0 20px;
+		display: flex;
+		padding: 17px 0 14px 0;
+		background-color: $main-black;
+
+			.container{
+				justify-content: space-between;
+			}
+
+			&__nav-link{
+				font-size: 0.929em;
+				color: $grey-txt;
+				margin-right: 50px;
+				@include transition($easeOut-2s, color);
+
+					&:last-child{
+						margin-right: 0;
+					}
+
+					&:hover{
+						color: $light-grey-txt;
+						@include transition($easeIn-2s, color);
+					}
+			}
+
+			.personality-block{
+
+				.login{
+					color: $grey-txt;
+				}
+			}
 	}
 
 	&-center{
