@@ -2,13 +2,17 @@
 .header{
 
 	&-top{
-		display: flex;
 		padding: 17px 0 14px 0;
 		background-color: $main-black;
 
-			.container{
-				justify-content: space-between;
-			}
+		// .row{
+		// 	justify-content: space-between;
+		// }
+	}
+
+	.nav-block{
+		@include col();
+		@include size(7);
 
 			&__nav-link{
 				font-size: 0.929em;
@@ -25,17 +29,16 @@
 						@include transition($easeIn-2s, color);
 					}
 			}
-
-			.personality-block{
-
-				.login{
-					color: $grey-txt;
-				}
-			}
 	}
 
-	&-center{
-	
+	.personality-block{
+		@include col();
+		@include size(3);
+		margin-left: auto;
+
+		.login{
+			color: $grey-txt;
+		}
 	}
 }
 

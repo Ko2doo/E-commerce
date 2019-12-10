@@ -16,7 +16,8 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglifyjs": "^0.6.2"
+    "gulp-uglifyjs": "^0.6.2",
+    "smart-grid": "^2.1.2"
   },
   "author": "ko2doo@github.com",
   "license": "ISC",

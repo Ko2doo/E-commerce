@@ -1,6 +1,7 @@
 var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     addsrc        = require('gulp-add-src'),
+    smartgrid     = require('smart-grid'),
     browserSync   = require('browser-sync'),
     gcmq          = require('gulp-group-css-media-queries'),
     concat        = require('gulp-concat'),
@@ -21,6 +22,42 @@ gulp.task('sass', async function() {
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({stream: true}));
+});
+
+// настройки smart-grid
+gulp.task('smart-grid', (cb) => {
+  smartgrid('app/scss/stylesheets/', {
+    outputStyle: 'scss',
+    filename: '_smart-grid',
+    columns: 12, // number of grid columns
+    offset: '1.875rem', // gutter width - 30px
+    mobileFirst: false,
+    mixinNames: {
+        container: 'container'
+    },
+    container: {
+      maxWidth: '1170px',
+      fields: '0.9375rem' // side fields - 15px
+    },
+    breakPoints: {
+      xs: {
+          width: '20rem' // 320px
+      },
+      sm: {
+          width: '36rem' // 576px
+      },
+      md: {
+          width: '48rem' // 768px
+      },
+      lg: {
+          width: '62rem' // 992px
+      },
+      xl: {
+          width: '75rem' // 1200px
+      }
+    }
+  });
+  cb();
 });
 
 // минификация css
@@ -101,7 +138,7 @@ gulp.task('prebuild', async function() {
 
 });
 
-gulp.task('clear', function (callback) {
+gulp.task('clear-cache', function (callback) {
   return cache.clearAll();
 })
 
@@ -111,6 +148,8 @@ gulp.task('watch', function() {
   gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
 });
 
-gulp.task('default', gulp.parallel('sass', 'css-lib', 'scripts', 'browser-sync', 'watch'));
+gulp.task('default',
+     gulp.parallel('clear-cache', 'sass', 'css-lib', 'smart-grid', 'scripts', 'browser-sync', 'watch'));
 
-gulp.task('build', gulp.series('clean', 'clear', 'css-min', 'media-queries', 'prebuild', 'img'));
+gulp.task('build',
+     gulp.series('clean', 'clear-cache', 'css-min', 'media-queries', 'prebuild', 'img'));
