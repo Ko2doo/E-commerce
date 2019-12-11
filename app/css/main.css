@@ -60,30 +60,17 @@ img {
 body,
 html {
   font-size: 100%;
+  font-family: "Museo-Sans Cyrilic";
 }
 
 a {
   text-decoration: none;
 }
 
-h1 {
-  font-size: 2.000em;
-}
-
-h2 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 1.857em;
-}
-
-h4 {
-  font-size: 1.143em;
-}
-
 .container {
   width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .row {
@@ -96,6 +83,24 @@ h4 {
           flex-wrap: wrap;
   margin-left: -0.9375rem;
   margin-right: -0.9375rem;
+}
+
+@font-face {
+  font-family: "Museo-Sans Cyrilic";
+  font-weight: 400;
+  src: url("../../fonts/MuseoSansCyrl_0.otf");
+}
+
+@font-face {
+  font-family: "Museo-Sans Cyrilic";
+  font-weight: 500;
+  src: url("../../fonts/MuseoSansCyrl_1.otf");
+}
+
+@font-face {
+  font-family: "Museo-Sans Cyrilic";
+  font-weight: 900;
+  src: url("../../fonts/MuseoSansCyrl_3.otf");
 }
 
 .container {
@@ -132,6 +137,7 @@ h4 {
 .header-top {
   padding: 17px 0 14px 0;
   background-color: #000000;
+  z-index: 500;
 }
 
 .header .nav-block {
@@ -140,14 +146,20 @@ h4 {
   word-wrap: break-word;
   margin-left: 0.9375rem;
   margin-right: 0.9375rem;
-  width: -webkit-calc(58.33333% - 1.875rem);
-  width: calc(58.33333% - 1.875rem);
+  width: -webkit-calc(66.66667% - 1.875rem);
+  width: calc(66.66667% - 1.875rem);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 0;
 }
 
 .header .nav-block__nav-link {
   font-size: 0.929em;
+  font-weight: 500;
   color: #c2c2c2;
-  margin-right: 50px;
+  margin-right: auto;
   -webkit-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -170,7 +182,7 @@ h4 {
   transition-property: color;
 }
 
-.header .personality-block {
+.header .account-setting {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   word-wrap: break-word;
@@ -178,9 +190,105 @@ h4 {
   margin-right: 0.9375rem;
   width: -webkit-calc(25% - 1.875rem);
   width: calc(25% - 1.875rem);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-left: auto;
+  position: relative;
 }
 
-.header .personality-block .login {
-  color: #c2c2c2;
+.header .account-setting__login, .header .account-setting__user-menu {
+  font-size: 0.813em;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.header .account-setting__login {
+  margin-right: 20px;
+}
+
+.header .account-setting__register {
+  color: #fd3a3a;
+}
+
+.header .account-setting__user-menu {
+  margin-left: 30px;
+}
+
+.header .account-setting__icon {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.header .account-setting__icon:last-child {
+  margin-right: 0;
+}
+
+.header .account-setting .invis-menu {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.header .account-setting .invis-menu.active {
+  max-width: 212px;
+  width: 100%;
+  visibility: visible;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 400;
+  top: 40px;
+  background-color: #000000;
+}
+
+.header .account-setting .invis-menu__item {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 0.813em;
+  font-weight: 500;
+  padding: 8px 22px 8px 0;
+  color: #929292;
+  border-bottom: 1px solid #434343;
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+}
+
+.header .account-setting .invis-menu__item:hover {
+  color: #ffffff;
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+}
+
+.header .account-setting .invis-menu__item:last-child {
+  border-bottom: none;
 }

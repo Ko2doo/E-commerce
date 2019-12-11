@@ -1,16 +1,23 @@
 @font-face{
-  font-family: "Exo2-Regular";
+  font-family: "Museo-Sans Cyrilic";
   font-weight: 400;
-  src: url("../../fonts/Exo2-Regular.ttf");
+  src: url("../../fonts/MuseoSansCyrl_0.otf");
 }
 @font-face{
-  font-family: "Exo2-Medium";
+  font-family: "Museo-Sans Cyrilic";
   font-weight: 500;
-  src: url("../../fonts/Exo2-Medium.ttf");
+  src: url("../../fonts/MuseoSansCyrl_1.otf");
 }
 @font-face{
-  font-family: "Exo2-Black";
+  font-family: "Museo-Sans Cyrilic";
   font-weight: 900;
-  src: url("../../fonts/Exo2-Black.ttf");
+  src: url("../../fonts/MuseoSansCyrl_3.otf");
+}
+
+@mixin font($size, $weight) {
+	font:{
+		size: $size;
+		weight: $weight;
+	}
 }
 

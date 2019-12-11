@@ -4,20 +4,20 @@
 	&-top{
 		padding: 17px 0 14px 0;
 		background-color: $main-black;
-
-		// .row{
-		// 	justify-content: space-between;
-		// }
+		z-index: 500;
 	}
 
 	.nav-block{
 		@include col();
-		@include size(7);
+		@include size(8);
+
+		display: flex;
+		margin-right: 0;
 
 			&__nav-link{
-				font-size: 0.929em;
+				@include font(0.929em, 500);
 				color: $grey-txt;
-				margin-right: 50px;
+				margin-right: auto;
 				@include transition($easeOut-2s, color);
 
 					&:last-child{
@@ -31,13 +31,76 @@
 			}
 	}
 
-	.personality-block{
+	.account-setting{
 		@include col();
 		@include size(3);
+		
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 		margin-left: auto;
+		position: relative;
 
-		.login{
-			color: $grey-txt;
+		&__login,
+		&__user-menu{
+			@include font(0.813em, 500);
+			color: $main-white;
+		}
+
+		&__login{
+			margin-right: 20px;
+		}
+
+		&__register{
+			color: $main-orange;
+		}
+
+		&__user-menu{
+			margin-left: 30px;
+		}
+
+		&__icon{
+			font-size: 1.2em;
+			margin-right: 8px;
+				&:last-child{
+					margin-right: 0;
+				}
+		}
+
+		.invis-menu{
+			visibility: hidden;
+			position: absolute;
+			z-index: -1;
+
+			&.active{
+				max-width: 212px;
+				width: 100%;
+				visibility: visible;
+				display: flex;
+				flex-direction: column;
+				z-index: 400;
+				top: 40px;
+				background-color: $main-black;
+			}
+
+				&__item{
+					display: inline-flex;
+					justify-content: flex-end;
+					@include font(0.813em, 500);
+					padding: 8px 22px 8px 0;
+					color: $invis-menu-txt;
+					border-bottom: 1px solid $main-invis-menu-border;
+					@include transition($easeOut-2s, color);
+	
+						&:hover{
+							color: $main-white;
+							@include transition($easeIn-2s, color);
+						}
+
+						&:last-child{
+							border-bottom: none;
+						}
+				}
 		}
 	}
 }

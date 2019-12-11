@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1"
   }

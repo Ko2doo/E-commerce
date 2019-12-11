@@ -21,10 +21,25 @@
             <a href="#" target="_blank" class="nav-block__nav-link">Отзывы</a>
             <a href="#" target="_blank" class="nav-block__nav-link">Контакты</a>
           </nav>
-          <ul class="personality-block">
-            <a href="#" class="login">Вход</a>
-            <a href="#" class="register">Регистрация</a>
-            <a href="#" class="user-menu">меню</a>
+          <ul class="account-setting">
+            <a href="#" class="account-setting__login">
+              <i class="account-setting__icon fa fa-user" aria-hidden="true"></i>
+                Вход
+            </a>
+            <a href="#" class="account-setting__register">
+              <i class="account-setting__icon fa fa-lock" aria-hidden="true"></i>
+                Регистрация
+            </a>
+            <a href="#" class="account-setting__user-menu submenu">
+              <i class="account-setting__icon fa fa-bars" aria-hidden="true"></i>
+            </a>
+              <nav class="invis-menu">
+                <a href="#" target="_blank" class="invis-menu__item">My Account</a>
+                <a href="#" target="_blank" class="invis-menu__item">Wish list</a>
+                <a href="#" target="_blank" class="invis-menu__item">Checkout</a>
+                <a href="#" target="_blank" class="invis-menu__item">Shopping Cart</a>
+                <a href="#" target="_blank" class="invis-menu__item">Log Out</a>
+              </nav>
           </ul>
         </div>
       </div>
@@ -35,7 +50,7 @@
 
 
     <!-- script's -onn -->
- <script src="js/libs.min.js"></script>
+ <script src="js/libs.js"></script>
  <script src="js/common.js"></script>
     <!-- script's -off -->
 </body>
