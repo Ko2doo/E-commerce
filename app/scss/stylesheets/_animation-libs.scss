@@ -27,3 +27,46 @@ $easeInOut-3s:  all 0.3s ease-in-out;
     transition-property: $properties;
   }
 }
+
+@keyframes fade-in{
+	0%{
+		opacity: 0;
+		top: -50px;
+		animation-timing-function: ease;
+	}
+
+	100%{
+		visibility: visible;
+		opacity: 1;
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes open-menu{
+	0%{
+		opacity: 0;
+		top: 150%;
+		animation-timing-function: ease;
+	}
+
+	100%{
+		visibility: visible;
+		opacity: 1;
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes close-menu{
+	0%{
+		opacity: 1;
+		top: 150%;
+		animation-timing-function: ease-out;
+	}
+
+	100%{
+		top: -50%;
+		opacity: 0;
+		visibility: hidden;
+		animation-timing-function: ease-out;
+	}
+}

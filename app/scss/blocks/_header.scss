@@ -62,24 +62,26 @@
 		&__icon{
 			font-size: 1.2em;
 			margin-right: 8px;
-				&:last-child{
-					margin-right: 0;
-				}
 		}
 
-		.invis-menu{
+		.dropdown-menu{
+			max-width: 212px;
+			width: 100%;
 			visibility: hidden;
+			display: flex;
+			flex-direction: column;
+			left: 17%;
 			position: absolute;
 			z-index: -1;
+			background-color: $main-black;
 
-			&.active{
-				max-width: 212px;
-				width: 100%;
-				visibility: visible;
-				display: flex;
-				flex-direction: column;
+
+			&.is-active{
 				z-index: 400;
+				display: flex;
 				top: 40px;
+				animation: .5s fade-in;
+				animation-fill-mode: forwards;
 				background-color: $main-black;
 			}
 
@@ -101,8 +103,184 @@
 							border-bottom: none;
 						}
 				}
+		} //--end dropdown-menu
+	} //--end account-setting
+	
+	&-info{
+		max-height: 125px;
+		padding: 28px 0 18px;
+		display: flex;
+		background-color: $main-white;
+	} // --end header-info
+
+	&-panel{
+		@include col();
+		@include size(10);
+
+		position: relative;
+		margin-left: 0;
+		z-index: 300;
+
+		&__phone-section{
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			flex-basis: 20%;
+			margin-right: 15px;
+			
+			.phone-section__li{
+				margin-bottom: 8px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+
+				&--icon{
+					font-size: 0.875em;
+					color: $main-orange;
+				}
+			}
+
+			.phone-number{
+				@include font(1.125em, 500);
+
+				color: $main-black;
+			}
+			
+			.btn__view-phones{
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				border: none;
+				background-color: transparent;
+				text-align: center;
+				cursor: pointer;
+
+				.view-phones__txt{
+					@include font(1em, 700);
+
+					border-bottom-style: dotted;
+					color: $main-black;
+				}
+			}
+	
+			.hidden-block{
+				max-width: calc(265px - 34px);
+				width: 100%;
+				padding: 14px 14px 25px 20px;
+				display: none;
+				left: -45px;
+				top: 105%;
+				position: absolute;
+				z-index: -1;
+				background-color: $main-black;
+
+				&::after{
+			    content: '';
+			    position: absolute;
+			    left: 50%;
+			    top: -8px;
+			    width: 0;
+			    height: 0;
+			    border-left: 8px solid transparent;
+			    border-right: 8px solid transparent;
+			    border-bottom: 8px solid $main-black;
+				}
+
+				&.is-open{
+					visibility: visible;
+					display: flex;
+					flex-direction: column;
+					z-index: 600;
+					animation: .5s open-menu;
+					animation-fill-mode: forwards;
+					background-color: $main-black;
+				}
+
+				.btn-close-menu{
+					max-width: 18px;
+					width: 100%;
+					padding: 0;
+					position: absolute;
+					top: 14px;
+					right: 14px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					border: none;
+					background-color: transparent;
+					cursor: pointer;
+
+						.close-icon{
+							font-size: 1em;
+							color: $main-white;
+						}
+				}
+
+				&__li{
+					padding: 12px 0 12px;
+
+					&:first-child{
+						margin-top: 18px;
+					}
+
+					& > a{
+						@include font(1em, 500);
+						color: $main-white;
+					}
+				}
+
+				&__phone-link{
+					
+				}
+
+				&__icon{
+
+					&--icon__mts{
+
+					}
+
+					&--icon__v{
+
+					}
+
+					&--icon__oldphone{
+
+					}
+
+					&--icon__life{
+
+					}
+
+					&--icon__viber{
+
+					}
+
+					&--icon__skype{
+
+					}
+
+					&--icon__mail{
+
+					}
+				}
+			}
+
+		} //--end header-panel__phone-section
+	
+	} //--end header-panel
+
+	&-logo{
+		@include col();
+		@include size(2);
+
+
+		&__img{
+
 		}
 	}
-}
+
+} //--end header
 
 //--end
