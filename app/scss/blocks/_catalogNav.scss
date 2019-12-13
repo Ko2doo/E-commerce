@@ -1,0 +1,37 @@
+.catalog {
+  background-color: $ctg-bg;
+  @include font(0.813em, 500);
+}
+
+.dropdown-category {
+  @include col();
+  @include size(1);
+  border:  none;
+
+  &:hover {
+    background-color: $ctg-it-hover;
+  }
+}
+
+.category-list {
+  @include col();
+  @include size(11);
+
+  &__item {
+    display: inline-block;
+
+    &:nth-child(odd) {
+      @include col();
+      @include size(1);
+    }
+
+    &:nth-child(even) {
+      @include col();
+      @include size(2);
+    }
+
+    &:hover {
+      background-color: $ctg-it-hover;
+    }
+  }
+}
