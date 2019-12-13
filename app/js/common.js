@@ -15,30 +15,41 @@ $(function(){
 
 	});
 
-// вешаем событие для выпадашки в хедере:
-	$('.open-dropdown').click( function($event){
-		$event.preventDefault();
-			var $dropdown = $('.dropdown-menu');
 
-					$dropdown.toggleClass('is-active');
-	});
+	// Универсальный dropdown-menu:
+	/*
+	*Use To html -->>
+	    <div class="dropdown-menu">
+	      <button class="btn-open">
+	        <i class="fa fa-bars" aria-hidden="true"></i>
+	      </button>
+	      <button class="btn-close">
+	        <i class="fa fa-times" aria-hidden="true"></i>
+	      </button>
 
-	// вешаем событие для выпадашки контактов:
-	var $btn_open 		= $('.view-phones');
-	var $btn_close 		= $('.btn-close-menu');
-	var $phone_menu 	= $('.hidden-block');
+	      <ul class="your classname">
+					your content
+	      </ul>
+	    </div>
+	*/
+	var $btn_open 			= $('.btn-open');
+	var $btn_close 			= $('.btn-close');
+	var $dropdowm_menu 	= $('.dropdown-menu > ul');
 	
 	$btn_open.click(function($event){
-		$event.preventDefault();
-					
-					$phone_menu.toggleClass('is-open');
+		 $event.stopPropagation();
+		 $event.preventDefault();
+
+		 $(this).parents('.dropdown-menu').find('ul').toggleClass('is-open');		 
 	});
 
 	$btn_close.click(function($event){
-		$('.hidden-block.is-open').removeClass('is-open').addClass('close');
+			$event.stopPropagation();
+			$event.preventDefault();
+			$dropdowm_menu.removeClass('is-open').addClass('close');
 
 			setTimeout(function($event){
-				$phone_menu.removeClass('close');
+				$dropdowm_menu.removeClass('close');
 			}, 1000);
 	});
 

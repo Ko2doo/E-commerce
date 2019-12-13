@@ -35,16 +35,18 @@
               </a>
             </li>
             <li class="account-setting__li">
-              <a href="#" class="account-setting__user-menu open-dropdown">
-                <i class="account-setting__icon fa fa-bars" aria-hidden="true"></i>
-              </a>
-                <nav class="dropdown-menu">
-                  <a href="#" target="_blank" class="dropdown-menu__item">My Account</a>
-                  <a href="#" target="_blank" class="dropdown-menu__item">Wish list</a>
-                  <a href="#" target="_blank" class="dropdown-menu__item">Checkout</a>
-                  <a href="#" target="_blank" class="dropdown-menu__item">Shopping Cart</a>
-                  <a href="#" target="_blank" class="dropdown-menu__item">Log Out</a>
-                </nav>
+              <div class="dropdown-menu">
+                <button class="account-setting__user-menu btn-open">
+                  <i class="account-setting__icon fa fa-bars" aria-hidden="true"></i>
+                </button>
+                  <ul class="account-menu">
+                    <a href="#" target="_blank" class="account-menu__item">My Account</a>
+                    <a href="#" target="_blank" class="account-menu__item">Wish list</a>
+                    <a href="#" target="_blank" class="account-menu__item">Checkout</a>
+                    <a href="#" target="_blank" class="account-menu__item">Shopping Cart</a>
+                    <a href="#" target="_blank" class="account-menu__item">Log Out</a>
+                  </ul>
+              </div>
             </li>
 
           </ul>
@@ -68,58 +70,113 @@
                 <a href="tel:375295758600" class="phone-number">+375 29 575-86-00</a>
               </li>
               <li class="phone-section__li">
-                <button class="btn__view-phones view-phones">
-                  <span class="view-phones__txt">Показать все</span>
-                </button>
-
-                <ul class="hidden-block">
-                  <li class="hidden-block__li">
-                    <a href="tel:375296068600" class="hidden-block__phone-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__mts"></i>
-                      +375 29 606-86-00
-                    </a>
-                  </li>
-                  <li class="hidden-block__li">
-                    <a href="tel:375295728600" class="hidden-block__phone-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__v"></i>
-                      +375 29 572-86-00
-                    </a>
-                  </li>
-                  <li class="hidden-block__li">
-                    <a href="tel:375172658842" class="hidden-block__phone-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__oldphone"></i>
-                      +375 17 265-88-42
-                    </a>
-                  </li>
-                  <li class="hidden-block__li">
-                    <a href="tel:375295758600" class="hidden-block__phone-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__life"></i>
-                      +375 29 575-86-00
-                    </a>
-                  </li>
-                  <li class="hidden-block__li">
-                    <a href="tel:375296068600" class="hidden-block__phone-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__viber"></i>
-                      +375 29 606-86-00
-                    </a>
-                  </li>
-                  <li class="hidden-block__li">
-                    <a href="mailto:mixt.by" class="hidden-block__mail-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__skype"></i>
-                      mixt.by
-                    </a>
-                  </li>
-                  <li class="hidden-block__li">
-                    <a href="mailto:ale9336851@ya.ru" class="hidden-block__mail-link">
-                      <i class="hidden-block__icon hidden-block__icon--icon__mail"></i>
-                      ale9336851@ya.ru
-                    </a>
-                  </li>
-
-                  <button class="btn-close-menu"><i class="fa fa-times close-icon" aria-hidden="true"></i></button>
-                </ul>
+                <div class="dropdown-menu">
+                  <button class="btn__view-phones btn-open">
+                    <span class="view-phones__txt">Показать все</span>
+                  </button>
+                  <ul class="info-block">
+                    <li class="info-block__li">
+                      <i class="info-block__icon info-block__icon--icon__mts"></i>
+                      <a href="tel:375296068600" class="info-block__phone-link">+375 29 606-86-00</a>
+                    </li>
+                    <li class="info-block__li">
+                      <a href="tel:375295728600" class="info-block__phone-link">
+                        <i class="info-block__icon info-block__icon--icon__v"></i>
+                        +375 29 572-86-00
+                      </a>
+                    </li>
+                    <li class="info-block__li">
+                      <a href="tel:375172658842" class="info-block__phone-link">
+                        <i class="info-block__icon info-block__icon--icon__oldphone"></i>
+                        +375 17 265-88-42
+                      </a>
+                    </li>
+                    <li class="info-block__li">
+                      <a href="tel:375295758600" class="info-block__phone-link">
+                        <i class="info-block__icon info-block__icon--icon__life"></i>
+                        +375 29 575-86-00
+                      </a>
+                    </li>
+                    <li class="info-block__li">
+                      <a href="tel:375296068600" class="info-block__phone-link">
+                        <i class="info-block__icon info-block__icon--icon__viber"></i>
+                        +375 29 606-86-00
+                      </a>
+                    </li>
+                    <li class="info-block__li">
+                      <a href="mailto:mixt.by" class="info-block__mail-link">
+                        <i class="info-block__icon info-block__icon--icon__skype"></i>
+                        mixt.by
+                      </a>
+                    </li>
+                    <li class="info-block__li">
+                      <a href="mailto:ale9336851@ya.ru" class="info-block__mail-link">
+                        <i class="info-block__icon info-block__icon--icon__mail"></i>
+                        ale9336851@ya.ru
+                      </a>
+                    </li>
+                    <button class="btn-close"><i class="fa fa-times close-icon" aria-hidden="true"></i></button>
+                  </ul>
+                </div>
               </li>
             </ul>
+
+            <div class="header-panel__search-place">
+              <form accept-charset="utf-8" class="search-place__forms">
+                <div class="category-option">
+                  <div class="dropdown-menu">
+                    <button class="category-option__btn btn-open">
+                      <i class="category-option__icon fa fa-list-ul" aria-hidden="true"></i>
+                        <span class="category-option__btn-text">Выбрать <br> категорию</span>
+                      <i class="category-option__btn-icon fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+
+                    <ul class="category-option__menu">
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Отопительная и климатическая техника</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Строительное оборудование и электроинструмент</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Садовая техника</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Товары для дома</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Спортивные товары</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Туристические товары</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Детские товары</a>
+                      </li>
+                      <li class="category-option__menu-li">
+                        <a href="#" class="category-option__menu-item" target="_blank">Бытовая техника</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <input type="text" placeholder="Поиск продукта" class="search-place__input">
+
+                <button class="search-place__btn-search">
+                  <i class="fa fa-search btn-search__icon" aria-hidden="true"></i>
+                </button>
+              </form>
+
+              <div class="alert-block">
+                <button class="alert-block__btn-card">
+                  <i class="fa fa-shopping-basket alert-block__icons" aria-hidden="true"></i>
+                    <span class="card-counter">10</span>
+                </button>
+                <button class="alert-block__btn-favorites">
+                  <i class="fa fa-heart alert-block__icons" aria-hidden="true"></i>
+                    <span class="favorites-counter">10</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
