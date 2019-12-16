@@ -1,0 +1,90 @@
+.climate-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 48px;
+		height: 37px;
+		background:{
+			image: url('../img/icons/category-nav/cond48x37.png');
+			repeat: no-repeat;
+		}
+	}
+}
+
+.garden-equipment-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 58px;
+		height: 40px;
+		background:{
+			image: url('../img/icons/category-nav/kosilka58x40.png');
+			repeat: no-repeat;
+		}
+	}
+}
+
+.construction-machinery-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 49px;
+		height: 36px;
+		background:{
+			image: url('../img/icons/category-nav/stroy49x36.png');
+			repeat: no-repeat;
+		}
+	}
+}
+
+.household-products-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 45px;
+		height: 39px;
+		background:{
+			image: url('../img/icons/category-nav/home45x39.png');
+			repeat: no-repeat;
+		}
+	}
+}
+
+.sporting-goods-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 40px;
+		height: 44px;
+		background:{
+			image: url('../img/icons/category-nav/sport40x44.png');
+			repeat: no-repeat;
+		}
+	}
+}
+
+.childens-goods-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 44px;
+		height: 40px;
+		background:{
+			image: url('../img/icons/category-nav/toys44x40.png');
+			repeat: no-repeat;
+		}
+	}
+}
+
+.travel-goods-icon{
+	display: inline-flex;
+	&::before{
+		content: '';
+		width: 54px;
+		height: 33px;
+		background:{
+			image: url('../img/icons/category-nav/tourist54x33.png');
+			repeat: no-repeat;
+		}
+	}
+}
