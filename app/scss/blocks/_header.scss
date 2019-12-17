@@ -147,7 +147,7 @@
 			flex-basis: 20%;
 			margin-right: 15px;
 			
-			.phone-section__li{
+			.phone-section__li-item{
 				margin-bottom: 8px;
 				margin-left: auto;
 
@@ -264,31 +264,31 @@
 
 						.info-block__icon--icon__mts{
 							&::before{
-								background-image: url('../../img/icons/phone-menu/MTS17x16hover.png');
+								background-image: url('../img/icons/phone-menu/MTS17x16hover.png');
 							}
 						}
 
 						.info-block__icon--icon__v{
 							&::before{
-								background-image: url('../../img/icons/phone-menu/velcomv17x13hover.png');
+								background-image: url('../img/icons/phone-menu/velcomv17x13hover.png');
 							}
 						}
 
 						.info-block__icon--icon__life{
 							&::before{
-								background-image: url('../../img/icons/phone-menu/life31x17hover.png');
+								background-image: url('../img/icons/phone-menu/life31x17hover.png');
 							}
 						}
 
 						.info-block__icon--icon__viber{
 							&::before{
-								background-image: url('../../img/icons/phone-menu/viber18x20hover.png');
+								background-image: url('../img/icons/phone-menu/viber18x20hover.png');
 							}
 						}
 
 						.info-block__icon--icon__skype{
 							&::before{
-								background-image: url('../../img/icons/phone-menu/skype18x18hover.png');
+								background-image: url('../img/icons/phone-menu/skype18x18hover.png');
 							}
 						}
 					}
@@ -309,7 +309,7 @@
 							width: 17px;
 							height: 16px;
 							background:{
-								image: url('../../img/icons/phone-menu/MTS17x16.png');
+								image: url('../img/icons/phone-menu/MTS17x16.png');
 								repeat: no-repeat;
 							}
 						}
@@ -321,7 +321,7 @@
 							width: 17px;
 							height: 13px;
 							background:{
-								image: url('../../img/icons/phone-menu/velcomv17x13.png');
+								image: url('../img/icons/phone-menu/velcomv17x13.png');
 								repeat: no-repeat;
 							}
 						}
@@ -333,7 +333,7 @@
 							width: 18px;
 							height: 16px;
 							background:{
-								image: url('../../img/icons/phone-menu/old-phone18x16.png');
+								image: url('../img/icons/phone-menu/old-phone18x16.png');
 								repeat: no-repeat;
 							}
 						}
@@ -345,7 +345,7 @@
 							width: 31px;
 							height: 17px;
 							background:{
-								image: url('../../img/icons/phone-menu/life31x17.png');
+								image: url('../img/icons/phone-menu/life31x17.png');
 								repeat: no-repeat;
 							}
 						}
@@ -357,7 +357,7 @@
 							width: 18px;
 							height: 20px;
 							background:{
-								image: url('../../img/icons/phone-menu/viber18x20.png');
+								image: url('../img/icons/phone-menu/viber18x20.png');
 								repeat: no-repeat;
 							}
 						}
@@ -369,7 +369,7 @@
 							width: 18px;
 							height: 18px;
 							background:{
-								image: url('../../img/icons/phone-menu/skype18x18.png');
+								image: url('../img/icons/phone-menu/skype18x18.png');
 								repeat: no-repeat;
 							}
 						}
@@ -381,7 +381,7 @@
 							width: 13px;
 							height: 11px;
 							background:{
-								image: url('../../img/icons/phone-menu/mail13x11.png');
+								image: url('../img/icons/phone-menu/mail13x11.png');
 								repeat: no-repeat;
 							}
 						}
@@ -394,16 +394,19 @@
 			flex-basis: calc(80% - 15px);
 			display: flex;
 			align-items: center;
+			justify-content: flex-start;
+			flex-wrap: wrap;
 
 			.search-place{
 
 				&__forms{
+					display: flex;
+					align-items: center;
+					flex-grow: 1;
 					flex-basis: calc(600px - 16px);
 					width: 100%;
 					padding: 0 0 0 14px;
 					height: calc(47px - 2px);
-					display: flex;
-					align-items: center;
 					position: relative;
 					border: 1px solid $main-search-border;
 					border-radius: 30px;
@@ -450,6 +453,7 @@
 			.alert-block{
 				margin-left: 20px;
 				display: flex;
+				flex-grow: 1;
 				position: relative;
 
 				& > button {
@@ -505,7 +509,7 @@
 
 				.favorites-counter{
 					top: -18px;
-					right: -10px;
+					right: 5px;
 				}
 			}
 
@@ -624,6 +628,144 @@
 
 		}
 	}
+
+	&-menu{
+		height: auto;
+		background-color: $main-light-grey;
+
+		.category-menu{
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+
+				&__btn-cat{
+					flex-basis: calc(85px - 16px);
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					position: relative;
+					border: none;
+					border-top: 4px solid $main-black;
+					padding: 0 0.500em 0 0.500em;
+					background-color: $main-orange;
+					@include transition($easeOut-2s, background-color, border-top, color);
+
+					&::before{
+						content: '';
+						position: absolute;
+						top: -6px;
+						width: 100%;
+						height: 2px;
+						background-color: $main-black;
+					}
+
+
+						&:hover{
+							border-top: 4px solid $main-orange;
+							background-color: $main-black;
+							@include transition($easeIn-2s, background-color, border-top, color);
+							&::before{
+								background-color: $main-orange;
+							}
+						}
+
+					.btn-cat{
+						display: flex;
+						flex-grow: 1;
+
+						&__icon-item{
+							font-size: 2.250em;
+							color: $main-white;
+						}
+
+						&__txt-item{
+							padding-top: 0.875em;
+							color: $main-white;
+						}
+					}
+				}
+
+				&__list-item{
+					flex-basis: calc(1140px - 93px);
+					display: flex;
+					flex-wrap: wrap;
+					flex-grow: 1;
+				}
+
+				&__item{
+					flex-basis: calc(145px - 40px);
+					padding: 0.875em 20px 0.813em;
+					display: inline-flex;
+					align-items: center;
+					flex-direction: column;
+					text-align: center;
+					color: $main-black;
+					@include transition($easeIn-2s, background-color, background-image, color);
+					
+						&:hover{
+							background-color: $main-orange;
+							color: $main-white;
+							@include transition($easeInOut-2s, background-color, background-image, color);
+
+							.climate-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/cond48x37hover.png');
+								}
+							}
+
+							.garden-equipment-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/kosilka58x40hover.png');
+								}
+							}
+
+							.construction-machinery-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/stroy49x36hover.png');
+								}
+							}
+
+							.household-products-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/home45x39hover.png');
+								}
+							}
+
+							.sporting-goods-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/sport40x44hover.png');
+								}
+							}
+
+							.childens-goods-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/toys44x40hover.png');
+								}
+							}
+
+							.travel-goods-icon{
+								&::before{
+									background-image: url('../img/icons/category-nav/tourist54x33hover.png');
+								}
+							}
+
+						}
+
+						&-icon{
+							height: 50px;
+						}
+				}
+
+				&__txt{
+					margin-bottom: auto;
+					font-size: 0.813em;
+				}
+
+		} //--end category-menu
+
+	} //--end header-menu
 
 } //--end header
 

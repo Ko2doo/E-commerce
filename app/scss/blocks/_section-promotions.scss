@@ -1,0 +1,24 @@
+.section-promotions{
+	
+	.promotion-boiler{
+		display: flex;
+		flex-wrap: wrap;
+
+		&__description-block{
+			display: flex;
+			flex-grow: 1;
+
+			@media screen and (max-width: 1366px) {
+				flex-basis: calc(1366px / 2 - 600px);
+			}
+		}
+
+		&__heading{}
+
+		&__text{
+
+		}
+	}
+
+
+} //--end section
