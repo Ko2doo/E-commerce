@@ -1,0 +1,27 @@
+.category-menu {
+
+
+    &__dropdown-list{
+        position: absolute;
+        top: 310px;
+        visibility: hidden;
+        display: none;
+        padding-top: 25px;
+        text-transform: uppercase;
+        line-height: 2;
+
+
+        &.is-open{
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+            z-index: 600;
+            animation: .5s open-menu;
+            animation-fill-mode: forwards;
+            background-color: $main-black;
+        }
+    }
+
+
+}
+
