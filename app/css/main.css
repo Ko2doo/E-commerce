@@ -1351,12 +1351,19 @@ button {
   font-size: 0.813em;
 }
 
-.category-menu__dropdown-list {
+.category-menu__dropdown-wrapper {
   position: absolute;
   top: 310px;
+  width: 100%;
+  max-width: 1170px;
+}
+
+.category-menu__dropdown-list {
   visibility: hidden;
   display: none;
-  padding-top: 25px;
+  width: -webkit-calc(100% / 4);
+  width: calc(100% / 4);
+  padding: 25px 35px 25px 10px;
   text-transform: uppercase;
   line-height: 2;
 }
@@ -1377,6 +1384,31 @@ button {
           animation: .5s open-menu;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  background-color: #000000;
+}
+
+.category-menu__dropdown-item {
+  position: relative;
+}
+
+.category-menu__dropdown-item--icon {
+  position: absolute;
+  top: .4em;
+  right: -15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.category-menu__dropdown-link {
+  color: #ffffff;
+}
+
+.category-menu__submenu {
+  position: absolute;
+  top: -25px;
+  right: -920px;
+  width: -webkit-calc(1170px - 100%);
+  width: calc(1170px - 100%);
   background-color: #000000;
 }
 
