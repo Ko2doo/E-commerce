@@ -1,6 +1,11 @@
 .category-menu {
 
-    &__dropdown-wrapper {
+}
+
+.catDrop {
+
+
+    &-wrapper {
         position: absolute;
         top: 310px;
         width: 100%;
@@ -8,7 +13,7 @@
     }
 
 
-    &__dropdown-list{
+    &-list{
         visibility: hidden;
         display: none;
         width: calc(100% / 4);
@@ -28,7 +33,7 @@
         }
     }
 
-    &__dropdown-item {
+    &-item {
         position: relative;
 
 
@@ -42,19 +47,27 @@
 
     }
 
-    &__dropdown-link {
+    &-link {
         color: $main-white;
 
     }
 
-
     &__submenu {
         position: absolute;
-        top: -25px;
-        right: -920px;
-        width: calc(1170px - 100%);
-        background-color: $main-black;
+        left: 337px;
+        width: calc(1170px - 337px);
+        height: 100%;
 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-color: $main-black;
+        color: $main-white;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
