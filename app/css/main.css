@@ -1351,6 +1351,10 @@ button {
   font-size: 0.813em;
 }
 
+.catDrop a {
+  color: #ffffff;
+}
+
 .catDrop-wrapper {
   position: absolute;
   top: 310px;
@@ -1359,6 +1363,7 @@ button {
 }
 
 .catDrop-list {
+  position: relative;
   visibility: hidden;
   display: none;
   width: -webkit-calc(100% / 4);
@@ -1387,10 +1392,6 @@ button {
   background-color: #000000;
 }
 
-.catDrop-item {
-  position: relative;
-}
-
 .catDrop-item--icon {
   position: absolute;
   top: .4em;
@@ -1399,20 +1400,13 @@ button {
   cursor: pointer;
 }
 
-.catDrop-link {
-  color: #ffffff;
-}
-
 .catDrop__submenu {
   position: absolute;
   left: 337px;
   width: -webkit-calc(1170px - 337px);
   width: calc(1170px - 337px);
   height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -1434,6 +1428,13 @@ button {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.catDrop__submenu.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .section-promotions .promotion-boiler {

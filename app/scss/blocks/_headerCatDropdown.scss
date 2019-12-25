@@ -3,7 +3,9 @@
 }
 
 .catDrop {
-
+    & a {
+        color: $main-white;
+    }
 
     &-wrapper {
         position: absolute;
@@ -14,6 +16,7 @@
 
 
     &-list{
+        position: relative;
         visibility: hidden;
         display: none;
         width: calc(100% / 4);
@@ -34,7 +37,7 @@
     }
 
     &-item {
-        position: relative;
+        
 
 
         &--icon {
@@ -47,18 +50,13 @@
 
     }
 
-    &-link {
-        color: $main-white;
-
-    }
-
     &__submenu {
         position: absolute;
         left: 337px;
         width: calc(1170px - 337px);
         height: 100%;
 
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         justify-content: flex-start;
         background-color: $main-black;
@@ -67,6 +65,10 @@
         &-item {
             display: flex;
             flex-direction: column;
+        }
+
+        &.active {
+            display: flex;
         }
     }
 }
