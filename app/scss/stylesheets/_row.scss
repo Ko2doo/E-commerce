@@ -1,3 +1,4 @@
 .row{
 	@include row-flex();
+	justify-content: start;
 }

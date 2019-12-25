@@ -1,0 +1,17 @@
+.section-seals{
+	padding:{
+		top: 46px;
+		bottom: 36px;
+	}
+	background-color: $main-bg;
+
+
+	&__heading{
+		display: flex;
+		flex-basis: 100%;
+		flex-grow: 1;
+	}
+
+
+
+} //--end section 
