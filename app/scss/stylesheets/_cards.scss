@@ -1,11 +1,52 @@
 // храним стили для карточек:
 
+/*
+* use to your html 1-variant card:
+<div class="card-item">
+	<div class="card-item__header-card">
+		<img alt="" class="header-card__image-item" src="../">
+		<a href="#/" class="header-card__txt-item">...</a>
+	</div>
+	
+	<div class="card-item__footer-card">
+		<ul class="footer-card__ul-item">
+			<li class="footer-card__list-item">.....</li>
+		</ul>
+
+  <p class="footer-card__cost-item">...</p>
+	</div>
+
+	<div class="hover-block">
+		<ul class="hover-block__setting-item">
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-heart-o" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-exchange" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</a>
+			</li>
+		</ul>
+		<button class="btn-add-to-card">add to card</button>
+	</div>
+</div> <!--//-end card-item -->
+*
+*
+*/
+
 .card-item{
 	@include col();
 	@include size(3);
 	@include size-lg(4);
 	@include size-md(6);
-	@include size-sm(11);
+	@include size-sm(12);
 	
 	z-index: 100;
 	display: flex;
@@ -15,8 +56,8 @@
 	margin-bottom: 1.25rem;
 	padding:{
 		top: 13px;
-		left: 14px;
-		right: 14px;
+		left: 0.9375rem;
+		right: 0.9375rem;
 		bottom: 26px;
 	}
 	height: 506px;
@@ -30,20 +71,19 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 25px;
 
 		.header-card{
 
+
 			&__image-item{
-				max-width: 176px;
 				width: 100%;
-				height: auto;
-				object-fit: cover;
+				height: 223px;
+				object-fit: contain;
 			}
 
 			&__txt-item{
 				@include font(1em, 700);
-
+				
 				text-align: center;
 				color: $main-black;
 			}
@@ -114,7 +154,7 @@
 		}
 
 		.btn-add-to-card{
-			margin: 44px auto 0 auto;
+			margin: 24px auto 0 auto;
 			width: 143px;
 			height: 46px;
 			display: inline-flex;
@@ -149,5 +189,13 @@
 	// убираем отступы снизу у последних 4-ех эл-ов
 	&:nth-child(n+4){
 		margin-bottom: 0;
+	}
+
+	@media screen and (max-width: 62rem) {
+		margin-bottom: 1.25rem;
+		
+		&:nth-child(n+4){
+			margin-bottom: 1.25rem;
+		}
 	}
 } //--end card-item

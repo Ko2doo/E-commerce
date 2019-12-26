@@ -410,6 +410,46 @@ button {
   background-color: transparent;
 }
 
+/*
+* use to your html 1-variant card:
+<div class="card-item">
+	<div class="card-item__header-card">
+		<img alt="" class="header-card__image-item" src="../">
+		<a href="#/" class="header-card__txt-item">...</a>
+	</div>
+	
+	<div class="card-item__footer-card">
+		<ul class="footer-card__ul-item">
+			<li class="footer-card__list-item">.....</li>
+		</ul>
+
+  <p class="footer-card__cost-item">...</p>
+	</div>
+
+	<div class="hover-block">
+		<ul class="hover-block__setting-item">
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-heart-o" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-exchange" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</a>
+			</li>
+		</ul>
+		<button class="btn-add-to-card">add to card</button>
+	</div>
+</div> <!--//-end card-item -->
+*
+*
+*/
 .card-item {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -430,8 +470,8 @@ button {
           flex-direction: column;
   margin-bottom: 1.25rem;
   padding-top: 13px;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
   padding-bottom: 26px;
   height: 506px;
   position: relative;
@@ -463,8 +503,8 @@ button {
 
 @media screen and (max-width: 36rem) {
   .card-item {
-    width: -webkit-calc(91.66667% - 1.875rem);
-    width: calc(91.66667% - 1.875rem);
+    width: -webkit-calc(100% - 1.875rem);
+    width: calc(100% - 1.875rem);
   }
 }
 
@@ -482,15 +522,13 @@ button {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 25px;
 }
 
 .card-item__header-card .header-card__image-item {
-  max-width: 176px;
   width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 223px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .card-item__header-card .header-card__txt-item {
@@ -576,7 +614,7 @@ button {
 }
 
 .card-item .hover-block .btn-add-to-card {
-  margin: 44px auto 0 auto;
+  margin: 24px auto 0 auto;
   width: 143px;
   height: 46px;
   display: -webkit-inline-box;
@@ -629,6 +667,15 @@ button {
 
 .card-item:nth-child(n+4) {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 62rem) {
+  .card-item {
+    margin-bottom: 1.25rem;
+  }
+  .card-item:nth-child(n+4) {
+    margin-bottom: 1.25rem;
+  }
 }
 
 .header-top {
