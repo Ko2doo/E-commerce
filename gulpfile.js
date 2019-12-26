@@ -162,4 +162,4 @@ gulp.task('default',
      gulp.parallel('clear-cache', 'fonts', 'sass', 'css-lib', 'smart-grid', 'scripts', 'browser-sync', 'watch'));
 
 gulp.task('build',
-     gulp.series('clean', 'clear-cache', 'css-min', 'media-queries', 'prebuild', 'img'));
+     gulp.series('clean', 'clear-cache', 'media-queries', 'css-min', 'prebuild', 'img'));
