@@ -6,12 +6,12 @@
 @font-face{
   font-family: "Museo-Sans Cyrilic";
   font-weight: 500;
-  src: url("../../fonts/MuseoSansCyrl_1.otf");
+  src: url("../fonts/MuseoSansCyrl_1.otf");
 }
 @font-face{
   font-family: "Museo-Sans Cyrilic";
   font-weight: 900;
-  src: url("../../fonts/MuseoSansCyrl_3.otf");
+  src: url("../fonts/MuseoSansCyrl_3.otf");
 }
 
 @mixin font($size, $weight) {

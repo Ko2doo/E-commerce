@@ -6,5 +6,16 @@
 
 	background-color: $main-white;
 
+	.col-6{
+
+		@media screen and (max-width: 62rem){
+			margin: 0 auto 0.875rem auto;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
 
 } //--end section
