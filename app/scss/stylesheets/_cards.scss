@@ -72,6 +72,11 @@
 	@include size-sm(12);
 }
 
+.col-12{
+	@include col();
+	@include size(12);
+}
+
 $border-style: 1px solid $main-border;
 
 .card-item{
@@ -225,12 +230,8 @@ $border-style: 1px solid $main-border;
 			height: auto;
 		}
 
-		border:{
-			left:$border-style;
-			right:$border-style;
-			bottom:$border-style;
-			radius: 0;
-		}
+		border: $border-style;
+		border-radius: 0;
 		margin-bottom: 0.75rem;
 		padding-bottom: 0.875rem;
 		height: 360px;
