@@ -1,0 +1,48 @@
+.section-advantage{
+	padding-top: rem(76);
+	padding-bottom: rem(70);
+
+	&__header-item{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: rem(50);
+		@include font(1.250em, 500);
+		color: $main-black;
+	}
+
+
+		.advantage-box{
+			@include col();
+			@include size(4);
+			@include size-lg(4);
+			@include size-md(6);
+			@include size-sm(12);
+
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: auto;
+			margin-bottom: rem(73);
+
+			&:nth-child(n+3){
+				margin-bottom: 0;
+			}
+
+				&__image-block{
+					display: inline-flex;
+					align-items: baseline;
+					height: 80px;
+				}
+				
+				&__txt-item{
+					margin-top: rem(17);
+					line-height: 1.375em;
+					width: 80%;
+					@include font(0.875em, 500);
+					color: $main-black;
+				}
+		} //--end .advantage-box
+
+} //--end section
