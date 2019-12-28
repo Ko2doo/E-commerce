@@ -2123,6 +2123,11 @@ button {
           flex-grow: 1;
 }
 
+.testing-click {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .section-new__product {
   padding-top: 2.375rem;
   padding-bottom: 1.625rem;
