@@ -75,6 +75,8 @@ gulp.task('css-lib', function(){
   return gulp.src('node_modules/normalize.css/normalize.css')
     .pipe(addsrc.append('node_modules/aos/dist/aos.css'))
     .pipe(addsrc.append('node_modules/font-awesome/css/font-awesome.css'))
+    .pipe(addsrc.append('node_modules/slick-carousel/slick/slick.css'))
+    .pipe(addsrc.append('node_modules/slick-carousel/slick/slick-theme.css'))
     .pipe(concat('libs.css'))
     .pipe(gulp.dest('app/css'));
 });
@@ -84,8 +86,17 @@ gulp.task('fonts', function(){
   font = [
     'node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2,otf}'
   ]
+
   return gulp.src(font)
     .pipe(gulp.dest('app/fonts/'));
+});
+
+// для слика
+gulp.task('slick-font', function(){
+  font = [ 'node_modules/slick-carousel/slick/fonts/*.{eot,svg,ttf,woff}' ];
+
+  return gulp.src(font)
+    .pipe(gulp.dest('app/css/fonts'));
 });
 
 //таск для синхонизации с браузером
@@ -102,6 +113,7 @@ gulp.task('browser-sync', function() {
 gulp.task('scripts', function() {
   return gulp.src(['node_modules/jquery/dist/jquery.js'])
     .pipe(addsrc.append('node_modules/aos/dist/aos.js'))
+    .pipe(addsrc.append('node_modules/slick-carousel/slick/slick.js'))
     .pipe(concat('libs.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'));
@@ -159,7 +171,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default',
-     gulp.parallel('clear-cache', 'fonts', 'sass', 'css-lib', 'smart-grid', 'scripts', 'browser-sync', 'watch'));
+     gulp.parallel('clear-cache', 'fonts', 'slick-font', 'sass', 'css-lib', 'smart-grid', 'scripts', 'browser-sync', 'watch'));
 
 gulp.task('build',
      gulp.series('clean', 'clear-cache', 'media-queries', 'css-min', 'prebuild', 'img'));
