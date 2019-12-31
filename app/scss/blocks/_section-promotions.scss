@@ -3,20 +3,67 @@
 	display: grid;
 	grid-template-rows: 30% 10% 20% 5% 35%;
 	grid-template-columns: 30% 30% 20% 20%;
+	color: $white-txt;
 
 	&-banner {
 
 		// 1
 		&-1 {
+			position: relative;
 			grid-area: 1;
 			grid-row: 1 / 3;
 			grid-column: 1 / 3;
+
+			&__description-block {
+				width: 25%;
+				margin: 70px 90px;
+			}
+
+			&__heading {
+				margin-bottom: 25px;
+				font:{
+					size: 1.625em;
+					weight: 900;
+				}
+				text-transform: uppercase;
+			}
+
+			&__text {
+				font:{
+					size: 1.25em;
+					weight: 500;
+				}
+			}
+
+			&__item {
+				position: absolute;
+				top: 0;
+				left: 50%;
+			}
 		}
 		// 2
 		&-2 {
 			grid-area: 2;
 			grid-row: 3 / 5;
 			grid-column: 1 / 2;
+
+			&__description-block {
+				margin-top: 35%;
+
+			}
+
+			&__link {
+				padding: 15px 35px;
+				background-color: $white-bg;
+				border-radius: 0px 50px 50px 0px / 0px 100px 100px 0px;
+				font:{
+					size: 1.5em;
+					weight: 400;
+				}
+				text-transform: uppercase;
+				color: $black-txt;
+				cursor: pointer;
+			}
 		}
 		// 3
 		&-3 {
