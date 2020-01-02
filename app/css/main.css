@@ -2116,10 +2116,20 @@ button {
   grid-area: 2;
   grid-row: 3 / 5;
   grid-column: 1 / 2;
-}
-
-.promotion-banner-2__description-block {
-  margin-top: 35%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 25px 0;
 }
 
 .promotion-banner-2__link {
@@ -2134,9 +2144,84 @@ button {
 }
 
 .promotion-banner-3 {
+  position: relative;
   grid-area: 3;
   grid-row: 5 / 6;
   grid-column: 1 / 2;
+  padding: 40px 45px;
+}
+
+.promotion-banner-3__description-block {
+  line-height: 2;
+  color: #000000;
+}
+
+.promotion-banner-3__heading {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.promotion-banner-3__text {
+  font-size: 1.25em;
+  font-weight: 900;
+}
+
+.promotion-banner-3__item {
+  margin: 25px;
+}
+
+.promotion-banner-3__gift {
+  position: absolute;
+  right: 40px;
+  bottom: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: -webkit-calc(100% / 3);
+  width: calc(100% / 3);
+  height: 55%;
+  font-size: 1.25em;
+  font-weight: 900;
+  text-align: center;
+  color: #000000;
+}
+
+.promotion-banner-3__link {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  width: -webkit-calc(100% / 6);
+  width: calc(100% / 6);
+  padding: 15px 65px;
+  border-radius: 100px;
+  background-color: #fd3a3a;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffffff;
+  -webkit-transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.promotion-banner-3__link:hover {
+  background-color: #ff0000;
+}
+
+.promotion-banner-3__link:active {
+  color: #fd3a3a;
+  background-color: #ffffff;
 }
 
 .promotion-banner-4 {
