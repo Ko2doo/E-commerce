@@ -178,9 +178,43 @@
 		}
 		// 5
 		&-5 {
+			position: relative;
 			grid-area: 5;
 			grid-row: 1 / 2;
 			grid-column: 3 / 5;
+
+			&__description-block {
+				padding: em(30) em(60);
+				color: $black-txt;
+			}
+
+			&__text {
+				&--light {
+					@include font(em(18), 500);
+
+				}
+				&--medium {
+					@include font(em(24), 500);
+				}
+				&--large{
+					@include font(em(28), 500);
+					&-green{
+						color: $bnr-txt-green;
+					}
+					&-red {
+						color: $bnr-txt-red;
+					}
+				}
+
+
+			}
+
+			&__item {
+			 	position: absolute;
+				bottom: em(10);
+				left: em(60);
+				width: em(340);
+			}
 		}
 		// 6
 		&-6 {

@@ -2291,9 +2291,45 @@ button {
 }
 
 .promotion-banner-5 {
+  position: relative;
   grid-area: 5;
   grid-row: 1 / 2;
   grid-column: 3 / 5;
+}
+
+.promotion-banner-5__description-block {
+  padding: 1.875em 3.75em;
+  color: #000000;
+}
+
+.promotion-banner-5__text--light {
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.promotion-banner-5__text--medium {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.promotion-banner-5__text--large {
+  font-size: 1.75em;
+  font-weight: 500;
+}
+
+.promotion-banner-5__text--large-green {
+  color: #638726;
+}
+
+.promotion-banner-5__text--large-red {
+  color: #ea2626;
+}
+
+.promotion-banner-5__item {
+  position: absolute;
+  bottom: 0.625em;
+  left: 3.75em;
+  width: 21.25em;
 }
 
 .promotion-banner-6 {
