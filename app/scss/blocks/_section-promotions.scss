@@ -1,5 +1,5 @@
 .promotion{
-	height: 1150px;
+	height: em(1150);
 	display: grid;
 	grid-template-rows: 30% 10% 20% 5% 35%;
 	grid-template-columns: 30% 30% 20% 20%;
@@ -16,23 +16,17 @@
 
 			&__description-block {
 				width: 25%;
-				margin: 70px 90px;
+				margin: em(70) em(90);
 			}
 
 			&__heading {
-				margin-bottom: 25px;
-				font:{
-					size: 1.625em;
-					weight: 900;
-				}
+				margin-bottom: em(25);
+				@include font(em(26), 900);
 				text-transform: uppercase;
 			}
 
 			&__text {
-				font:{
-					size: 1.25em;
-					weight: 500;
-				}
+				@include font(em(20), 900);
 			}
 
 			&__item {
@@ -49,20 +43,17 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-end;
-			padding: 25px 0;
+			padding: em(50) 0;
 
 			&__description-block {
 
 			}
 
 			&__link {
-				padding: 15px 35px;
+				padding: em(15) em(35);
 				background-color: $white-bg;
 				border-radius: 0px 50px 50px 0px / 0px 100px 100px 0px;
-				font:{
-					size: 1.5em;
-					weight: 400;
-				}
+				@include font(em(24), 900);
 				text-transform: uppercase;
 				color: $black-txt;
 				cursor: pointer;
@@ -74,7 +65,7 @@
 			grid-area: 3;
 			grid-row: 5 / 6;
 			grid-column: 1 / 2;
-			padding: 40px 45px;
+			padding: em(40) em(45);
 
 			&__description-block {
 				line-height: 2;
@@ -82,72 +73,108 @@
 				}
 
 			&__heading {
-				font:{
-					size: 1.5em;
-					weight: 900;
-				}
+				@include font(em(24), 900);
 			}
 
 			&__text {
-				font:{
-					size: 1.25em;
-					weight: 900;
-				}
+				@include font(em(20), 900);
 			}
 
 			&__item {
-				margin: 25px;
+				margin: em(25);
 			}
 
 			&__gift {
 				position: absolute;
-				right: 40px;
-				bottom: 100px;
+				right: em(20);
+				bottom: em(70);
 				display: flex;
 				flex-direction: column;
 				justify-content: flex-end;
-				width: calc(100% / 3);
-				height: 55%;
-				font:{
-					size: 1.25em;
-					weight: 900;
-				}
+				align-content: flex-end;
+				min-width: em(100);
+				height: em(160);
+				@include font(em(20), 900);
 				text-align: center;
 				color: $black-txt;
 			}
 
 			&__link {
 				position: absolute;
-				right: 40px;
-				bottom: 20px;
-				width: calc(100% / 6);
-				padding: 15px 65px;
+				right: em(20);
+				bottom: em(20);
+				min-width: em(80);
+				padding: em(5) em(30);
 				border-radius: 100px;
-				background-color: $btn-red;
-				font:{
-					size: 1.5em;
-					weight: 500;
-				}
+				background-color: $bnr-btn-red;
+				@include font(em(24), 900);
 				text-align: center;
 				text-transform: capitalize;
 				color: $white-txt;
-				transition: all .5s ease-in;
+				transition: all 0.5s ease-in;
 
 				&:hover {
-					background-color: $btn-red-hover;
+					background-color: $bnr-btn-red-hover;
 				}
 
 				&:active {
-					color: $btn-red;
-					background-color: $btn-white;
+					color: $bnr-btn-red;
+					background-color: $bnr-btn-white;
 				}
 			}
 		}
 		// 4
 		&-4 {
+			position: relative;
 			grid-area: 4;
 			grid-row: 3 / 6;
 			grid-column: 2;
+
+			&__description-block {
+
+			}
+
+			&__item {
+				position: absolute;
+				top: 80px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			&__heading {
+				margin-top: 230px;
+				text-align: center;
+				@include font(em(23), 900);
+				color: $bnr-txt-blue;
+
+				&>span {
+					display: block;
+					@include font(em(33), 900);
+				}
+			}
+
+			&__hit {
+				position: absolute;
+				top: 320px;
+				right: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				min-width: em(230);
+				min-height: em(80);
+				background-image: url(../img/banners/price-hit.png);
+				background-repeat: no-repeat;
+				background-position: right center;
+				color: $bnr-txt-red;
+				@include font(em(26), 900);
+			}
+
+			&__text {
+				width: em(300);
+				margin: 140px auto;
+				@include font(em(15), 500);
+				color: $black-txt;
+			}
 		}
 		// 5
 		&-5 {

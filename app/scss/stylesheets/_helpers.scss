@@ -5,6 +5,10 @@
 	@return ($px / 16) +rem;
 }
 
+@function em($px) {
+	@return ($px / 16) +em;
+}
+
 .container {
   @include container();
   @include sm(max-width, rem(510));
