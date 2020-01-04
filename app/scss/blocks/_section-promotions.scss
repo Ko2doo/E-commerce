@@ -1,9 +1,14 @@
 .promotion{
-	height: em(1150);
+	height: auto;
 	display: grid;
 	grid-template-rows: 30% 10% 20% 5% 35%;
 	grid-template-columns: 30% 30% 20% 20%;
 	color: $white-txt;
+	font-size: 0.9vw; // куда без костылей?))
+
+	& *{
+		z-index: -999;
+	}
 
 	&-banner {
 
@@ -15,7 +20,7 @@
 			grid-column: 1 / 3;
 
 			&__description-block {
-				width: 25%;
+				max-width: em(400);
 				margin: em(70) em(90);
 			}
 
@@ -26,13 +31,14 @@
 			}
 
 			&__text {
-				@include font(em(20), 900);
+				@include font(em(20), 500);
 			}
 
 			&__item {
 				position: absolute;
 				top: 0;
 				left: 50%;
+				width: em(180);
 				max-width: em(240);
 				max-height: em(400);
 			}
@@ -67,7 +73,7 @@
 			grid-area: 3;
 			grid-row: 5 / 6;
 			grid-column: 1 / 2;
-			padding: em(40) em(45);
+			padding: em(40) 0 em(40) em(45);
 
 			&__description-block {
 				line-height: 2;
@@ -97,8 +103,9 @@
 				justify-content: flex-end;
 				align-content: flex-end;
 				min-width: em(100);
-				height: em(160);
+				height: em(120);
 				@include font(em(20), 900);
+				line-height: 0.1;
 				text-align: center;
 				color: $black-txt;
 			}
@@ -171,6 +178,7 @@
 				background-image: url(../img/banners/price-hit.png);
 				background-repeat: no-repeat;
 				background-position: right center;
+				background-size: em(100);
 				color: $bnr-txt-red;
 				@include font(em(26), 900);
 			}
@@ -190,7 +198,7 @@
 			grid-column: 3 / 5;
 
 			&__description-block {
-				padding: em(30) em(60);
+				padding: em(30) 0 em(30) em(60);
 				color: $black-txt;
 			}
 
@@ -219,7 +227,7 @@
 			 	position: absolute;
 				bottom: em(10);
 				left: em(60);
-				width: em(340);
+				width: em(250);
 				max-width: em(400);
 				max-height: em(230);
 			}
@@ -314,8 +322,8 @@
 				position: absolute;
 				left: em(80);
 				bottom: em(100);
-				width: em(240);
-				height: em(240);
+				width: em(200);
+				height: em(200);
 				max-width: em(275);
 				max-height: em(275);
 			}
@@ -324,4 +332,3 @@
 
 
 } //--end promotions
-

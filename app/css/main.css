@@ -2075,11 +2075,16 @@ button {
 }
 
 .promotion {
-  height: 71.875em;
+  height: auto;
   display: grid;
   grid-template-rows: 30% 10% 20% 5% 35%;
   grid-template-columns: 30% 30% 20% 20%;
   color: #ffffff;
+  font-size: 0.9vw;
+}
+
+.promotion * {
+  z-index: -999;
 }
 
 .promotion-banner-1 {
@@ -2090,7 +2095,7 @@ button {
 }
 
 .promotion-banner-1__description-block {
-  width: 25%;
+  max-width: 25em;
   margin: 4.375em 5.625em;
 }
 
@@ -2103,13 +2108,14 @@ button {
 
 .promotion-banner-1__text {
   font-size: 1.25em;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .promotion-banner-1__item {
   position: absolute;
   top: 0;
   left: 50%;
+  width: 11.25em;
   max-width: 15em;
   max-height: 25em;
 }
@@ -2150,7 +2156,7 @@ button {
   grid-area: 3;
   grid-row: 5 / 6;
   grid-column: 1 / 2;
-  padding: 2.5em 2.8125em;
+  padding: 2.5em 0 2.5em 2.8125em;
 }
 
 .promotion-banner-3__description-block {
@@ -2195,9 +2201,10 @@ button {
       -ms-flex-line-pack: end;
           align-content: flex-end;
   min-width: 6.25em;
-  height: 10em;
+  height: 7.5em;
   font-size: 1.25em;
   font-weight: 900;
+  line-height: 0.1;
   text-align: center;
   color: #000000;
 }
@@ -2283,6 +2290,7 @@ button {
   background-image: url(../img/banners/price-hit.png);
   background-repeat: no-repeat;
   background-position: right center;
+  background-size: 6.25em;
   color: #ea2626;
   font-size: 1.625em;
   font-weight: 900;
@@ -2304,7 +2312,7 @@ button {
 }
 
 .promotion-banner-5__description-block {
-  padding: 1.875em 3.75em;
+  padding: 1.875em 0 1.875em 3.75em;
   color: #000000;
 }
 
@@ -2335,7 +2343,7 @@ button {
   position: absolute;
   bottom: 0.625em;
   left: 3.75em;
-  width: 21.25em;
+  width: 15.625em;
   max-width: 25em;
   max-height: 14.375em;
 }
@@ -2442,8 +2450,8 @@ button {
   position: absolute;
   left: 5em;
   bottom: 6.25em;
-  width: 15em;
-  height: 15em;
+  width: 12.5em;
+  height: 12.5em;
   max-width: 17.1875em;
   max-height: 17.1875em;
 }
