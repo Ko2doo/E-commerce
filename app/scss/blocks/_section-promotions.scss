@@ -276,9 +276,49 @@
 		}
 		// 8
 		&-8 {
+			position: relative;
 			grid-area: 8;
 			grid-row: 4 / 6;
 			grid-column: 4;
+			padding: em(40) em(30);
+
+			&__description-block {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				color: $black-txt;
+			}
+
+			&__text {
+				max-width: em(180);
+				max-height: em(90);
+				@include font(em(24), 500);
+
+
+				&--light {
+					max-width: em(260);
+					max-height: em(65);
+					@include font(em(18), 500);
+
+					&>span {
+						text-transform: uppercase;
+						@include font(em(26), 900);
+						color: $bnr-txt-red;
+
+					}
+				}
+			}
+
+			&__item {
+				position: absolute;
+				left: em(80);
+				bottom: em(100);
+				width: em(240);
+				height: em(240);
+				max-width: em(275);
+				max-height: em(275);
+			}
 		}
 	}
 

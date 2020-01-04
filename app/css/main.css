@@ -2392,9 +2392,60 @@ button {
 }
 
 .promotion-banner-8 {
+  position: relative;
   grid-area: 8;
   grid-row: 4 / 6;
   grid-column: 4;
+  padding: 2.5em 1.875em;
+}
+
+.promotion-banner-8__description-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  color: #000000;
+}
+
+.promotion-banner-8__text {
+  max-width: 11.25em;
+  max-height: 5.625em;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.promotion-banner-8__text--light {
+  max-width: 16.25em;
+  max-height: 4.0625em;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.promotion-banner-8__text--light > span {
+  text-transform: uppercase;
+  font-size: 1.625em;
+  font-weight: 900;
+  color: #ea2626;
+}
+
+.promotion-banner-8__item {
+  position: absolute;
+  left: 5em;
+  bottom: 6.25em;
+  width: 15em;
+  height: 15em;
+  max-width: 17.1875em;
+  max-height: 17.1875em;
 }
 
 .section-seals {
