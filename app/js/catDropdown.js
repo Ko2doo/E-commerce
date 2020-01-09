@@ -1,15 +1,18 @@
-var dropMenu = document.querySelector('.catDrop-list');
-var dropMenuItems = document.querySelectorAll('.catDrop-item');
-var dropSubmenus = document.querySelectorAll('.catDrop__submenu');
+// multi level menu
 
-for(var i = 0; i < dropMenuItems.length; i++) {
-    dropMenuItems[i].onclick = showSubmenu;
-}
+$('.catDrop-list a').click(function(event) {
+  var $current_li = $(this).parent('.catDrop-item');
 
-for(var j = 0; j < dropMenuItems.length; j++) {
-    dropSubmenus[j];
-}
+  if ( $current_li.children('.catDrop__submenu').length > 0 ) {
+    event.stopPropagation();
+    event.preventDefault();
+    $current_li.toggleClass('active');
+  }
 
-function showSubmenu(e) {
-    dropSubmenus[j].classList.toggle('active');
-}
+  $( $(this).parents('.catDrop__submenu').get(0) ).find('li').each(function(){
+    if ( this != $current_li.get(0) ) {
+      $(this).removeClass('active');
+    }
+  });
+
+});

@@ -1392,9 +1392,14 @@ button {
   background-color: #000000;
 }
 
+.catDrop-toggle {
+  display: block;
+  position: relative;
+}
+
 .catDrop-item--icon {
   position: absolute;
-  top: .4em;
+  top: 10%;
   right: -15px;
   color: #ffffff;
   cursor: pointer;
@@ -1402,7 +1407,8 @@ button {
 
 .catDrop__submenu {
   position: absolute;
-  left: 337px;
+  top: 0;
+  left: 345px;
   width: -webkit-calc(1170px - 337px);
   width: calc(1170px - 337px);
   height: 100%;
@@ -1430,7 +1436,7 @@ button {
           flex-direction: column;
 }
 
-.catDrop__submenu.active {
+li.active > .catDrop__submenu {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

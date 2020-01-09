@@ -1,7 +1,3 @@
-.category-menu {
-
-}
-
 .catDrop {
     & a {
         color: $main-white;
@@ -36,13 +32,16 @@
         }
     }
 
-    &-item {
-        
+    &-toggle {
+        display: block;
+        position: relative;
+    }
 
+    &-item {
 
         &--icon {
             position: absolute;
-            top: .4em;
+            top: 10%;
             right: -15px;
             color: $main-white;
             cursor: pointer;
@@ -52,7 +51,8 @@
 
     &__submenu {
         position: absolute;
-        left: 337px;
+        top: 0;
+        left: 345px;
         width: calc(1170px - 337px);
         height: 100%;
 
@@ -66,10 +66,10 @@
             display: flex;
             flex-direction: column;
         }
-
-        &.active {
-            display: flex;
-        }
     }
+}
+
+li.active > .catDrop__submenu {
+    display: flex;
 }
 
