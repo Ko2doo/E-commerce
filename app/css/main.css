@@ -2074,6 +2074,98 @@ button {
   font-size: 0.813em;
 }
 
+.catDrop a {
+  color: #ffffff;
+}
+
+.catDrop-wrapper {
+  position: absolute;
+  top: 310px;
+  width: 100%;
+  max-width: 1170px;
+}
+
+.catDrop-list {
+  position: relative;
+  visibility: hidden;
+  display: none;
+  width: -webkit-calc(100% / 4);
+  width: calc(100% / 4);
+  padding: 25px 35px 25px 10px;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+.catDrop-list.is-open {
+  visibility: visible;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 600;
+  -webkit-animation: .5s open-menu;
+          animation: .5s open-menu;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  background-color: #000000;
+}
+
+.catDrop-toggle {
+  display: block;
+  position: relative;
+}
+
+.catDrop-item--icon {
+  position: absolute;
+  top: 10%;
+  right: -15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.catDrop__submenu {
+  position: absolute;
+  top: 0;
+  left: 345px;
+  width: -webkit-calc(1170px - 337px);
+  width: calc(1170px - 337px);
+  height: 100%;
+  display: none;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.catDrop__submenu-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+li.active > .catDrop__submenu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .promotion {
   height: auto;
   display: grid;

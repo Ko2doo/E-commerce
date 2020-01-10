@@ -1,0 +1,75 @@
+.catDrop {
+    & a {
+        color: $main-white;
+    }
+
+    &-wrapper {
+        position: absolute;
+        top: 310px;
+        width: 100%;
+        max-width: 1170px;
+    }
+
+
+    &-list{
+        position: relative;
+        visibility: hidden;
+        display: none;
+        width: calc(100% / 4);
+        padding: 25px 35px 25px 10px;
+        text-transform: uppercase;
+        line-height: 2;
+
+
+        &.is-open{
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+            z-index: 600;
+            animation: .5s open-menu;
+            animation-fill-mode: forwards;
+            background-color: $main-black;
+        }
+    }
+
+    &-toggle {
+        display: block;
+        position: relative;
+    }
+
+    &-item {
+
+        &--icon {
+            position: absolute;
+            top: 10%;
+            right: -15px;
+            color: $main-white;
+            cursor: pointer;
+        }
+
+    }
+
+    &__submenu {
+        position: absolute;
+        top: 0;
+        left: 345px;
+        width: calc(1170px - 337px);
+        height: 100%;
+
+        display: none;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-color: $main-black;
+        color: $main-white;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+li.active > .catDrop__submenu {
+    display: flex;
+}
+
