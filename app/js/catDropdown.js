@@ -6,8 +6,10 @@ $('.catDrop-list a').click(function(event) {
   if ( $current_li.children('.catDrop__submenu').length > 0 ) {
     event.stopPropagation();
     event.preventDefault();
-    $current_li.toggleClass('active');
+    $current_li.toggleClass('active').siblings().removeClass('active');
   }
+
+
 
   $( $(this).parents('.catDrop__submenu').get(0) ).find('li').each(function(){
     if ( this != $current_li.get(0) ) {
