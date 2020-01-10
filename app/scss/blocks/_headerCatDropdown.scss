@@ -1,6 +1,6 @@
 .catDrop {
     & a {
-        color: $main-white;
+        color: $catDrop-main;
     }
 
     &-wrapper {
@@ -35,6 +35,10 @@
     &-toggle {
         display: block;
         position: relative;
+
+        &:hover {
+            color: $main-white;
+        }
     }
 
     &-item {
@@ -43,10 +47,8 @@
             position: absolute;
             top: 10%;
             right: -15px;
-            color: $main-white;
             cursor: pointer;
         }
-
     }
 
     &__submenu {
@@ -69,7 +71,20 @@
     }
 }
 
-li.active > .catDrop__submenu {
-    display: flex;
+li.active {
+
+    color: $main-white;
+
+    & > .catDrop__submenu {
+        display: flex;
+    }
+
+    & > .catDrop-toggle {
+        color: $main-white;
+    }
+
+    & a:hover {
+        color: $main-white;
+    }
 }
 

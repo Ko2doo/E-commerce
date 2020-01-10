@@ -2075,7 +2075,7 @@ button {
 }
 
 .catDrop a {
-  color: #ffffff;
+  color: #bdbdbd;
 }
 
 .catDrop-wrapper {
@@ -2120,11 +2120,14 @@ button {
   position: relative;
 }
 
+.catDrop-toggle:hover {
+  color: #ffffff;
+}
+
 .catDrop-item--icon {
   position: absolute;
   top: 10%;
   right: -15px;
-  color: #ffffff;
   cursor: pointer;
 }
 
@@ -2159,11 +2162,23 @@ button {
           flex-direction: column;
 }
 
+li.active {
+  color: #ffffff;
+}
+
 li.active > .catDrop__submenu {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+li.active > .catDrop-toggle {
+  color: #ffffff;
+}
+
+li.active a:hover {
+  color: #ffffff;
 }
 
 .promotion {
