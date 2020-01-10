@@ -1,24 +1,334 @@
-.section-promotions{
-	
-	.promotion-boiler{
-		display: flex;
-		flex-wrap: wrap;
+.promotion{
+	height: auto;
+	display: grid;
+	grid-template-rows: 30% 10% 20% 5% 35%;
+	grid-template-columns: 30% 30% 20% 20%;
+	color: $white-txt;
+	font-size: 0.9vw; // куда без костылей?))
 
-		&__description-block{
-			display: flex;
-			flex-grow: 1;
+	& *{
+		z-index: -999;
+	}
 
-			@media screen and (max-width: 1366px) {
-				flex-basis: calc(1366px / 2 - 600px);
+	&-banner {
+
+		// 1
+		&-1 {
+			position: relative;
+			grid-area: 1;
+			grid-row: 1 / 3;
+			grid-column: 1 / 3;
+
+			&__description-block {
+				max-width: em(400);
+				margin: em(70) em(90);
+			}
+
+			&__heading {
+				margin-bottom: em(25);
+				@include font(em(26), 900);
+				text-transform: uppercase;
+			}
+
+			&__text {
+				@include font(em(20), 500);
+			}
+
+			&__item {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: em(180);
+				max-width: em(240);
+				max-height: em(400);
 			}
 		}
+		// 2
+		&-2 {
+			grid-area: 2;
+			grid-row: 3 / 5;
+			grid-column: 1 / 2;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: em(50) 0;
 
-		&__heading{}
+			&__description-block {
 
-		&__text{
+			}
 
+			&__link {
+				padding: em(15) em(35);
+				background-color: $white-bg;
+				border-radius: 0px 50px 50px 0px / 0px 100px 100px 0px;
+				@include font(em(24), 900);
+				text-transform: uppercase;
+				color: $black-txt;
+				cursor: pointer;
+			}
+		}
+		// 3
+		&-3 {
+			position: relative;
+			grid-area: 3;
+			grid-row: 5 / 6;
+			grid-column: 1 / 2;
+			padding: em(40) 0 em(40) em(45);
+
+			&__description-block {
+				line-height: 2;
+				color: $black-txt;
+				}
+
+			&__heading {
+				@include font(em(24), 900);
+			}
+
+			&__text {
+				@include font(em(20), 900);
+			}
+
+			&__item {
+				margin: em(25);
+				max-width: em(260);
+				max-height: em(210);
+			}
+
+			&__gift {
+				position: absolute;
+				right: em(20);
+				bottom: em(70);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				align-content: flex-end;
+				min-width: em(100);
+				height: em(120);
+				@include font(em(20), 900);
+				line-height: 0.1;
+				text-align: center;
+				color: $black-txt;
+			}
+
+			&__link {
+				position: absolute;
+				right: em(20);
+				bottom: em(20);
+				min-width: em(80);
+				padding: em(5) em(30);
+				border-radius: 100px;
+				background-color: $bnr-btn-red;
+				@include font(em(24), 900);
+				text-align: center;
+				text-transform: capitalize;
+				color: $white-txt;
+				transition: all 0.5s ease-in;
+
+				&:hover {
+					background-color: $bnr-btn-red-hover;
+				}
+
+				&:active {
+					color: $bnr-btn-red;
+					background-color: $bnr-btn-white;
+				}
+			}
+		}
+		// 4
+		&-4 {
+			position: relative;
+			grid-area: 4;
+			grid-row: 3 / 6;
+			grid-column: 2;
+
+			&__description-block {
+
+			}
+
+			&__item {
+				position: absolute;
+				top: 80px;
+				left: 50%;
+				transform: translateX(-50%);
+				max-width: em(410);
+				max-height: em(140);
+			}
+
+			&__heading {
+				margin-top: 230px;
+				text-align: center;
+				@include font(em(23), 900);
+				color: $bnr-txt-blue;
+
+				&>span {
+					display: block;
+					@include font(em(33), 900);
+				}
+			}
+
+			&__hit {
+				position: absolute;
+				top: 320px;
+				right: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				min-width: em(230);
+				min-height: em(80);
+				background-image: url(../img/banners/price-hit.png);
+				background-repeat: no-repeat;
+				background-position: right center;
+				background-size: em(100);
+				color: $bnr-txt-red;
+				@include font(em(26), 900);
+			}
+
+			&__text {
+				width: em(300);
+				margin: 140px auto;
+				@include font(em(15), 500);
+				color: $black-txt;
+			}
+		}
+		// 5
+		&-5 {
+			position: relative;
+			grid-area: 5;
+			grid-row: 1 / 2;
+			grid-column: 3 / 5;
+
+			&__description-block {
+				padding: em(30) 0 em(30) em(60);
+				color: $black-txt;
+			}
+
+			&__text {
+				&--light {
+					@include font(em(18), 500);
+
+				}
+				&--medium {
+					@include font(em(24), 500);
+				}
+				&--large{
+					@include font(em(28), 500);
+					&-green{
+						color: $bnr-txt-green;
+					}
+					&-red {
+						color: $bnr-txt-red;
+					}
+				}
+
+
+			}
+
+			&__item {
+			 	position: absolute;
+				bottom: em(10);
+				left: em(60);
+				width: em(250);
+				max-width: em(400);
+				max-height: em(230);
+			}
+		}
+		// 6
+		&-6 {
+			grid-area: 6;
+			grid-row: 2 / 4;
+			grid-column: 3 / 5;
+			padding: em(40) em(20);
+
+			&__description-block {
+				max-width: em(420);
+			}
+
+			&__text {
+				@include font(em(28), 900);
+				text-transform: uppercase;
+				color: $bnr-txt-blue;
+				&>span {
+					@include font(em(15), 900);
+					color: $bnr-txt-green;
+				}
+			}
+		}
+		// 7
+		&-7 {
+			grid-area: 7;
+			grid-row: 4 / 6;
+			grid-column: 3;
+			padding: em(40) 0;
+
+			&__description-block {
+				max-width: em(210);
+				max-height: em(210);
+				padding: em(18) em(15) em(40);
+				background-color: $bnr-bg-dark-rgba;
+			}
+
+			&__text {
+				@include font(em(20), 500);
+
+				&>span {
+					display: block;
+					margin: em(5) 0;
+					@include font(em(24), 500);
+					color: $bnr-txt-red;
+				}
+
+				&--light {
+
+				}
+			}
+		}
+		// 8
+		&-8 {
+			position: relative;
+			grid-area: 8;
+			grid-row: 4 / 6;
+			grid-column: 4;
+			padding: em(40) em(30);
+
+			&__description-block {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				color: $black-txt;
+			}
+
+			&__text {
+				max-width: em(180);
+				max-height: em(90);
+				@include font(em(24), 500);
+
+
+				&--light {
+					max-width: em(260);
+					max-height: em(65);
+					@include font(em(18), 500);
+
+					&>span {
+						text-transform: uppercase;
+						@include font(em(26), 900);
+						color: $bnr-txt-red;
+
+					}
+				}
+			}
+
+			&__item {
+				position: absolute;
+				left: em(80);
+				bottom: em(100);
+				width: em(200);
+				height: em(200);
+				max-width: em(275);
+				max-height: em(275);
+			}
 		}
 	}
 
 
-} //--end section
+} //--end promotions

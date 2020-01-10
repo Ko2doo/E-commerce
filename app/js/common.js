@@ -36,21 +36,48 @@ $(function(){
 	var $btn_close 			= $('.btn-close');
 	var $dropdowm_menu 	= $('.dropdown-menu > ul');
 	
-	$btn_open.click(function($event){
-		 $event.stopPropagation();
-		 $event.preventDefault();
+	$btn_open.click(function(event){
+		 event.stopPropagation();
+		 event.preventDefault();
 
 		 $(this).parents('.dropdown-menu').find('ul').toggleClass('is-open');		 
 	});
 
-	$btn_close.click(function($event){
-			$event.stopPropagation();
-			$event.preventDefault();
+	$btn_close.click(function(event){
+			event.stopPropagation();
+			event.preventDefault();
 			$dropdowm_menu.removeClass('is-open').addClass('close');
 
-			setTimeout(function($event){
+			setTimeout(function(event){
 				$dropdowm_menu.removeClass('close');
 			}, 1000);
 	});
+
+	// инициализируем слайдер и настраиваем его:
+	// $('.slider-block').slick({
+	//   centerMode: true,
+	//   centerPadding: '60px',
+	//   slidesToShow: 3,
+	//   responsive: [
+	//     {
+	//       breakpoint: 768,
+	//       settings: {
+	//         arrows: false,
+	//         centerMode: true,
+	//         centerPadding: '40px',
+	//         slidesToShow: 3
+	//       }
+	//     },
+	//     {
+	//       breakpoint: 480,
+	//       settings: {
+	//         arrows: false,
+	//         centerMode: true,
+	//         centerPadding: '40px',
+	//         slidesToShow: 1
+	//       }
+	//     }
+	//   ]
+	// });
 
 });

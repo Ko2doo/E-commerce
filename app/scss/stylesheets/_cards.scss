@@ -1,0 +1,454 @@
+// храним стили для карточек:
+
+/*
+* use to your html 1-variant card:
+<div class="card-item">
+	<div class="card-item__header-card">
+		<img alt="" class="header-card__image-item" src="../">
+		<a href="#/" class="header-card__txt-item">...</a>
+	</div>
+	
+	<div class="card-item__footer-card">
+		<ul class="footer-card__ul-item">
+			<li class="footer-card__list-item">.....</li>
+		</ul>
+
+  <p class="footer-card__cost-item">...</p>
+	</div>
+
+	<div class="hover-block">
+		<ul class="hover-block__setting-item">
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-heart-o" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-exchange" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li class="hover-block__li-item">
+				<a href="#" class="transparent-icon hover-block__item">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</a>
+			</li>
+		</ul>
+		<button class="btn-add-to-card">add to card</button>
+	</div>
+</div> <!--//-end card-item -->
+*
+*
+*/
+
+// дефолтные стили для карточек,
+// чтобы не писать по 300 раз одно и тоже =)
+@mixin card-style-default() {
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	padding:{
+		top: 0.8125rem;
+		left: 0.9375rem;
+		right: 0.9375rem;
+		bottom: 1.625rem;
+	}
+	position: relative;
+	border-radius: 4px;
+	background-color: $main-white;
+	@include transition($easeIn-1s, box-shadow, color);
+
+		&:hover{
+			box-shadow: 0px 0px 6px 1px rgba(228,230,233,1);
+			border: none;
+		}
+}
+
+.col-6{
+	@include col();
+	@include size(6);
+	@include size-lg(10);
+	@include size-md(12);
+	@include size-sm(12);
+}
+
+.col-12{
+	@include col();
+	@include size(12);
+}
+
+$border-style: 1px solid $main-border;
+
+.card-item{
+	@include col();
+	@include size(3);
+	@include size-lg(4);
+	@include size-md(6);
+	@include size-sm(12);
+	
+	margin-bottom: 1.25rem;
+	height: 506px;
+	@include card-style-default();
+
+	&__header-card{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.header-card{
+
+
+			&__image-item{
+				width: 100%;
+				height: 223px;
+				object-fit: contain;
+			}
+
+			&__txt-item{
+				@include font(1em, 700);
+				
+				z-index: 4000;
+				text-align: center;
+				color: $main-black;
+			}
+		}
+	} //--end header-card
+
+	&__footer-card{
+		margin-top: auto;
+		.footer-card{
+
+			&__ul-item{
+				padding-left: 14px;
+			}
+
+			&__list-item{
+				@include font(0.750em, 500);
+
+				text-align: left;
+				list-style: disc;
+				margin-bottom: 15px;
+				color: $main-black;
+					&:last-child{
+						margin-bottom: 0;
+					}
+			}
+
+			&__cost-item{
+				@include font(1.500em, 700);
+				
+				margin-top: 22px;
+				text-align: center;
+				color: $main-black;
+			}
+		}
+	} //--end footer-card
+
+	.hover-block{
+		z-index: -1;
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: 20px;
+		padding-left: 13px;
+
+		&__setting-item{
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__li-item{
+			margin-bottom: 6px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+		}
+		
+		&__item{
+			color: $main-dark-grey;
+			@include transition($easeOut-2s, background-color, border, color);
+
+			&:hover{
+				border: 1px solid $main-orange;
+				background-color: $main-orange;
+				color: $main-white;
+			}
+		}
+
+		.btn-add-to-card{
+			margin: 24px auto 0 auto;
+			width: 143px;
+			height: 46px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			@include font(0.813em, 700);
+			text-transform: uppercase;
+			border-radius: 30px;
+			border: none;
+			background-color: $main-rgba-btn;
+			color: $main-white;
+		}
+	}
+
+	&:hover .hover-block{
+		width: calc(100% - 0.75rem);
+		visibility: visible;
+		z-index: 200;
+		display: flex;
+		flex-direction: column;
+		animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+
+	&:hover .header-card__txt-item{
+		color: $main-orange;
+	}
+
+	// убираем отступы снизу у последних 4-ех эл-ов
+	&:nth-child(n+4){
+		margin-bottom: 0;
+	}
+
+	@media screen and (max-width: 62rem) {
+		margin-bottom: 1.25rem;
+		
+		&:nth-child(n+4){
+			margin-bottom: 1.25rem;
+		}
+	}
+
+	&__mini-card{
+		@include col();
+		@include size(6);
+		@include size-lg(4);
+		@include size-md(6);
+		@include size-sm(12);
+
+		@media screen and (max-width: 62rem){
+			height: auto;
+		}
+
+		border: $border-style;
+		border-radius: 0;
+		margin-bottom: 0.75rem;
+		padding-bottom: 0.875rem;
+		height: 360px;
+
+		.header-card__image-item{
+			width: 100%;
+			height: 145px;
+			object-fit: contain;
+		}
+
+		.footer-card__cost-item{
+			margin-top: auto;
+		}
+
+		.footer-card__list-item{
+			margin-bottom: 14px;
+		}
+
+		&:hover .hover-block{
+			flex-direction: inherit;
+		}
+
+		.hover-block{
+				flex-direction: inherit;
+
+				.btn-add-to-card{
+					margin: 0;
+					width: 118px;
+					height: 33px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					bottom: 35px;
+					left: 24%;
+					@include font(0.813em, 700);
+					text-transform: uppercase;
+					border-radius: 30px;
+					border: none;
+					background-color: $main-rgba-btn;
+					color: $main-white;
+				}
+		}
+	}
+
+} //--end card-item
+
+// большая карточка:
+.big-card{
+	display: flex;
+	width: 100%;
+	flex-grow: 1;
+	position: relative;
+	box-sizing: border-box;
+	
+
+	height: calc(360px + 360px + 12px);
+	@include card-style-default();
+	border:{
+		left:$border-style;
+		right:$border-style;
+		bottom:$border-style;
+		radius: 0;
+	}
+
+	// header ->
+	&__header-card{
+		height: 312px;
+		// position: relative;
+		display: flex;
+		justify-content: flex-end;
+
+		.header-card{
+
+			&__image-item{
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+			}
+
+			&__txt-item{
+				@include font(1em, 700);
+				
+				text-align: center;
+				color: $main-black;
+			}
+		}
+
+	} //--end <- header
+	
+	// footer ->
+	&__footer-card{
+		padding-left: 1.1875rem;
+		padding-right: 1.1875rem;
+		@include row-flex();
+
+		margin-top: auto;
+
+		.col-6{
+			@media screen and (max-width: 48rem){
+				margin-right: 0;
+				margin-left: 0;
+
+				&:nth-child(3){
+					margin-top: 0.875rem;
+				}
+			}
+
+			margin-top: 2.625rem;
+			
+				&:nth-child(2){
+					margin-left: 0;
+					padding-right: 0;
+				}
+
+				&:nth-child(3){
+					margin-right: 0;
+					padding-left: 0;
+				}
+		}
+
+		.footer-card{
+
+			&__txt-item{
+				display: flex;
+				flex-wrap: wrap;
+				flex-grow: 1;
+				width: 100%;
+			}
+
+			&__txt-item{
+				display: flex;
+				flex-grow: 1;
+				@include font(1.250em, 700);
+				color: $main-black;
+			}
+
+			&__cost-item{
+				margin-top: 1rem;
+				@include font(1.500em, bold);
+				color: $main-orange;
+			}
+
+			&__ul-item{
+				align-items: center;
+			}
+			
+			&__list-item{
+				@include font(0.875em, 300);
+				
+				margin-bottom: 0.875rem;
+				color: $main-black;
+
+					&:last-child{
+						margin-bottom: 0;
+					}
+			}
+		}
+
+	} //--end <- footer
+
+	.hover-block{
+		z-index: -1;
+		visibility: hidden;
+		position: absolute;
+		top: 177px;
+		left: 0;
+
+		&__setting-item{
+			display: flex;
+			position: relative;
+			bottom: -140px;
+		}
+
+		&__li-item{
+			margin-right: 22px;
+
+				&:last-child{
+					margin-right: 0;
+				}
+		}
+		
+		&__item{
+			color: $main-dark-grey;
+			@include transition($easeOut-2s, background-color, border, color);
+
+			&:hover{
+				border: 1px solid $main-orange;
+				background-color: $main-orange;
+				color: $main-white;
+			}
+		}
+
+		.btn-view__item{
+			margin: 0 auto 0 auto;
+			width: 138px;
+			height: 38px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			@include font(0.813em, 700);
+			text-transform: uppercase;
+			border-radius: 30px;
+			border: none;
+			background-color: $main-rgba-btn;
+			color: $main-white;
+		}
+	}
+
+	&:hover .hover-block{
+		width: 100%;
+		visibility: visible;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		z-index: 200;
+		animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+}
+
