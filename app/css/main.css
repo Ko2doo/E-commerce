@@ -2083,6 +2083,7 @@ button {
   top: 310px;
   width: 100%;
   max-width: 1170px;
+  min-height: 22.5em;
 }
 
 .catDrop-list {
@@ -2091,9 +2092,11 @@ button {
   display: none;
   width: -webkit-calc(100% / 4);
   width: calc(100% / 4);
-  padding: 25px 35px 25px 10px;
+  height: 100%;
+  padding: 25px 35px 55px 10px;
+  font-size: 0.875rem;
   text-transform: uppercase;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 .catDrop-list.is-open {
@@ -2124,6 +2127,10 @@ button {
   color: #ffffff;
 }
 
+.catDrop-item {
+  padding-bottom: 1.5625em;
+}
+
 .catDrop-item--icon {
   position: absolute;
   top: 10%;
@@ -2137,17 +2144,20 @@ button {
   left: 345px;
   width: -webkit-calc(1170px - 337px);
   width: calc(1170px - 337px);
-  height: 100%;
+  height: auto;
+  padding: 1.5625em 1.25em 0;
   display: none;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-align-content: space-between;
+      -ms-flex-line-pack: justify;
+          align-content: space-between;
   background-color: #000000;
+  font-size: 0.875rem;
   color: #ffffff;
+  text-transform: capitalize;
+  line-height: 1.5;
 }
 
 .catDrop__submenu-item {
@@ -2160,6 +2170,13 @@ button {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: -webkit-calc(100% / 5);
+  width: calc(100% / 5);
+  padding-bottom: 1.875em;
+}
+
+.catDrop__submenu-headline {
+  font-size: 0.875rem;
 }
 
 li.active {
@@ -2173,12 +2190,26 @@ li.active > .catDrop__submenu {
   display: flex;
 }
 
+li.active > .catDrop__submenu > :last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-left: 20px;
+}
+
 li.active > .catDrop-toggle {
   color: #ffffff;
 }
 
 li.active a:hover {
   color: #ffffff;
+}
+
+li.active .catDrop-item--icon {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 .promotion {
