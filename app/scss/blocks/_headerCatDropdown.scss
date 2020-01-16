@@ -8,32 +8,28 @@
         top: 310px;
         width: 100%;
         max-width: 1170px;
-        min-height: em(360);
-    }
+    } // end catDrop-wrapper
 
 
     &-list{
         position: relative;
-        visibility: hidden;
         display: none;
-        width: calc(100% / 4);
-        height: 100%;
+        width: em(280);
+        height: auto;
         padding: 25px 35px 55px 10px;
+        background-color: $main-black;
         font-size: rem(14);
         text-transform: uppercase;
         line-height: 1.5;
 
 
         &.is-open{
-            visibility: visible;
             display: flex;
             flex-direction: column;
-            z-index: 600;
             animation: .5s open-menu;
             animation-fill-mode: forwards;
-            background-color: $main-black;
         }
-    }
+    } // end catDrop-list
 
     &-toggle {
         display: block;
@@ -42,7 +38,7 @@
         &:hover {
             color: $main-white;
         }
-    }
+    } // end catDrop-toggle
 
     &-item {
         padding-bottom: em(25);
@@ -50,39 +46,29 @@
         &--icon {
             position: absolute;
             top: 10%;
-            right: -15px;
+            right: -25px;
             cursor: pointer;
         }
-    }
+    } // end catDrop-item
 
     &__submenu {
-        position: absolute;
-        top: 0;
-        left: 345px;
-        width: calc(1170px - 337px);
-        height: auto;
-        padding: em(25) em(20) 0;
-
         display: none;
-        flex-wrap: wrap;
-        align-content: space-between;
-        background-color: $main-black;
-        font-size: rem(14);
-        color: $main-white;
-        text-transform: capitalize;
-        line-height: 1.5;
 
         &-item {
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            width: calc(100% / 5);
-            padding-bottom: em(30);
+            max-width: 165px;
+            flex-basis: calc(100% / 5);
+            padding-top: 20px;
+            padding-right: 15px;
+            margin-right: 20px;
         }
 
         &-headline {
             font-size: rem(14);
         }
-    }
+    } // catDrop__submenu
 }
 
 li.active {
@@ -92,11 +78,24 @@ li.active {
     & > .catDrop {
 
         &__submenu {
+            box-sizing: content-box;
+            position: absolute;
+            top: 0;
+            left: 300px;
             display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            width: em(1060);
+            height: 100%;
+            padding-left: 20px;
+            background-color: $main-black;
+            font-size: rem(14);
+            color: $main-white;
+            text-transform: capitalize;
+            line-height: 1.5;
 
             & > :last-child {
-                flex-grow: 1;
-                padding-left: 20px;
+
             }
         }
 

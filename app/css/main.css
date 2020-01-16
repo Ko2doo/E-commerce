@@ -2083,24 +2083,21 @@ button {
   top: 310px;
   width: 100%;
   max-width: 1170px;
-  min-height: 22.5em;
 }
 
 .catDrop-list {
   position: relative;
-  visibility: hidden;
   display: none;
-  width: -webkit-calc(100% / 4);
-  width: calc(100% / 4);
-  height: 100%;
+  width: 17.5em;
+  height: auto;
   padding: 25px 35px 55px 10px;
+  background-color: #000000;
   font-size: 0.875rem;
   text-transform: uppercase;
   line-height: 1.5;
 }
 
 .catDrop-list.is-open {
-  visibility: visible;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2110,12 +2107,10 @@ button {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 600;
   -webkit-animation: .5s open-menu;
           animation: .5s open-menu;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  background-color: #000000;
 }
 
 .catDrop-toggle {
@@ -2134,33 +2129,17 @@ button {
 .catDrop-item--icon {
   position: absolute;
   top: 10%;
-  right: -15px;
+  right: -25px;
   cursor: pointer;
 }
 
 .catDrop__submenu {
-  position: absolute;
-  top: 0;
-  left: 345px;
-  width: -webkit-calc(1170px - 337px);
-  width: calc(1170px - 337px);
-  height: auto;
-  padding: 1.5625em 1.25em 0;
   display: none;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-align-content: space-between;
-      -ms-flex-line-pack: justify;
-          align-content: space-between;
-  background-color: #000000;
-  font-size: 0.875rem;
-  color: #ffffff;
-  text-transform: capitalize;
-  line-height: 1.5;
 }
 
 .catDrop__submenu-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2170,9 +2149,13 @@ button {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: -webkit-calc(100% / 5);
-  width: calc(100% / 5);
-  padding-bottom: 1.875em;
+  max-width: 165px;
+  -webkit-flex-basis: -webkit-calc(100% / 5);
+      -ms-flex-preferred-size: calc(100% / 5);
+          flex-basis: calc(100% / 5);
+  padding-top: 20px;
+  padding-right: 15px;
+  margin-right: 20px;
 }
 
 .catDrop__submenu-headline {
@@ -2184,18 +2167,29 @@ li.active {
 }
 
 li.active > .catDrop__submenu {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 300px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-li.active > .catDrop__submenu > :last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  width: 66.25em;
+  height: 100%;
   padding-left: 20px;
+  background-color: #000000;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-transform: capitalize;
+  line-height: 1.5;
 }
 
 li.active > .catDrop-toggle {
